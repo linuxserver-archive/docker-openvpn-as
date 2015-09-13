@@ -9,8 +9,12 @@ find /config/bin -type f -print0 | xargs -0 sed -i 's#/usr/local/openvpn_as#/con
 sed -i 's#=openvpn_as#=abc#g' /config/etc/as_templ.conf
 fi
 
-if [ -f "/openvpn-pid/openvpn.pid" ]; then
-rm /openvpn-pid/openvpn.pid
+if [[ $(find /config/etc/sock -type f | wc -l) -ne 0 ]]; then
+rm -rf /config/etc/sock/*
+fi
+
+if [[ $(find /openvpn-pid -type f | wc -l) -ne 0 ]]; then
+rm -rf /openvpn-pid/*
 fi
 
 chown -R abc:abc /config/log
