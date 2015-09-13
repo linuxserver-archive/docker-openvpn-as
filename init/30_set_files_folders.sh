@@ -6,6 +6,7 @@ cp -pr /usr/local/openvpn_as/* /config/
 rm -rf /config/etc/db/* /config/tmp /config/sock
 find /config/scripts -type f -print0 | xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g'
 find /config/bin -type f -print0 | xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g'
+sed -i 's#=openvpn_as#=abc#g' /config/etc/as_templ.conf
 sed -i 's#~/tmp#/openvpn/tmp#g' /config/etc/as_templ.conf
 sed -i 's#~/sock#/openvpn/sock#g' /config/etc/as_templ.conf
 fi
