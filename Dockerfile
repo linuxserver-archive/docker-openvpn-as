@@ -18,9 +18,12 @@ ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
 RUN chmod -v +x /etc/service/*/run && chmod -v +x /etc/my_init.d/*.sh && \
 
-# give abc user a password and home folder
+# give abc user a home folder
 usermod -d /config abc && \
-echo "abc:password" | chpasswd
+
+# create admin user and set default password for it
+useradd -s /sbin/nologin admin && \
+echo "admin:password" | chpasswd
 
 # Volumes and Ports
 VOLUME /config
