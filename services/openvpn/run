@@ -1,4 +1,3 @@
 #!/bin/bash
-/config/scripts/openvpnas --pidfile=/openvpn/pid/openvpn.pid --logfile=/config/log/openvpn.log
-exec /sbin/setuser abc tail -F -q --pid=$(cat /openvpn/pid/openvpn.pid) $(ls -t /config/log/openvpn.log | head -n 2)
+/config/scripts/openvpnas --nodaemon --pidfile=/openvpn/pid/openvpn.pid --logfile=/config/log/openvpn.log
 
