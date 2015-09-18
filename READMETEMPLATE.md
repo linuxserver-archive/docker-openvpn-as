@@ -34,7 +34,9 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Setting up the application 
 
-<Insert a basic user guide here to get a n00b up and running with the software inside the container.> DELETE ME
+The admin interface is available at https://<ip>:943 with a default user/password of admin/password.
+To change the password (recommended) do
+`docker exec -it openvpnas passwd admin` 
 
 
 ## Updates
