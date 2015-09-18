@@ -12,5 +12,6 @@ fi
 if [[ $(find /config/etc/db -type f | wc -l) -eq 0 || ! -f "/config/etc/as.conf" ]]; then
 printf "${CONFINPUT}" | /config/bin/ovpn-init
 /etc/init.d/openvpnas stop
-chown -R abc:abc /config
 fi
+
+chown -R abc:abc /config
