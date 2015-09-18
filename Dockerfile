@@ -23,7 +23,14 @@ usermod -d /config abc && \
 
 # create admin user and set default password for it
 useradd -s /sbin/nologin admin && \
-echo "admin:password" | chpasswd
+echo "admin:password" | chpasswd && \
+
+# set some config for openvpn-as
+find /usr/local/openvpn_as/scripts -type f -print0 | xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g' && \
+find /usr/local/openvpn_as/bin -type f -print0 | xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g' && \
+sed -i 's#=openvpn_as#=abc#g' /usr/local/openvpn_as/etc/as_templ.conf && \
+sed -i 's#~/tmp#/openvpn/tmp#g' /usr/local/openvpn_as/etc/as_templ.conf && \
+sed -i 's#~/sock#/openvpn/sock#g' /usr/local/openvpn_as/etc/as_templ.conf
 
 # Volumes and Ports
 VOLUME /config
