@@ -34,4 +34,4 @@ sed -i 's#~/sock#/openvpn/sock#g' /usr/local/openvpn_as/etc/as_templ.conf
 
 # Volumes and Ports
 VOLUME /config
-#EXPOSE PORT
+EXPOSE 943/tcp 1194/udp 9443/tcp
