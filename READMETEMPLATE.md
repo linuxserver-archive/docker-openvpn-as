@@ -21,6 +21,8 @@ docker create --name=openvpnas -v <path to data>:/config -e PGID=<gid> -e PUID=<
 * `-e PUID` for UserID - see below for explanation
 * `-e TZ` for Timezone setting
 * `-e INTERFACE` setting interface for openvpn-as *default is eth0*
+* `--net=host` IMPORTANT, will not operate unless in host mode.
+* `--privileged` IMPORTANT, will not operate unless in privileged mode.
 
 It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it openvpnas /bin/bash`.
 
@@ -45,3 +47,4 @@ Part of what makes our containers work so well is by allowing you to specify you
 ## Versions
 
 + **18.09.2015:** Initial Release. 
+
