@@ -10,7 +10,7 @@ CONFINPUT=$NOASCONFIG$ASCONFIG
 fi
 
 if [[ $(find /config/etc/db -type f | wc -l) -eq 0 || ! -f "/config/etc/as.conf" ]]; then
-printf "${CONFINPUT}" | /config/bin/ovpn-init
+printf "%s" "${CONFINPUT}" | /config/bin/ovpn-init
 /etc/init.d/openvpnas stop
 fi
 
