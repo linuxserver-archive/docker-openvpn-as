@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -z $INTERFACE ]; then
+if [ -z "$INTERFACE" ]; then
 SET_INTERFACE="eth0"
 else
 SET_INTERFACE=$INTERFACE
