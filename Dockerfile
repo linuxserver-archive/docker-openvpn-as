@@ -16,7 +16,7 @@ apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
-RUN chmod -v +x /etc/service/*/run && chmod -v +x /etc/my_init.d/*.sh && \
+RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh && \
 
 # give abc user a home folder
 usermod -d /config abc && \
@@ -35,3 +35,4 @@ sed -i 's#~/sock#/openvpn/sock#g' /usr/local/openvpn_as/etc/as_templ.conf
 # Volumes and Ports
 VOLUME /config
 EXPOSE 943/tcp 1194/udp 9443/tcp
+
