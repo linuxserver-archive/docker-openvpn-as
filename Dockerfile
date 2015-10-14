@@ -12,7 +12,6 @@ curl -o /tmp/openvpn.deb http://swupdate.openvpn.org/as/openvpn-as-2.0.20-Ubuntu
 dpkg -i /tmp/openvpn.deb && \
 apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
