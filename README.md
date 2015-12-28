@@ -36,7 +36,7 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 The admin interface is available at https://<ip>:943 with a default user/password of admin/password.
 To change the password (recommended) do
-`docker exec -it openvpnas passwd admin` 
+`docker exec -it openvpn-as passwd admin` 
 
 
 ## Updates
