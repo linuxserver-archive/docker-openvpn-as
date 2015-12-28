@@ -24,7 +24,7 @@ docker create --name=openvpn-as -v <path to data>:/config -e PGID=<gid> -e PUID=
 * `--net=host` IMPORTANT, will not operate unless in host mode.
 * `--privileged` IMPORTANT, will not operate unless in privileged mode.
 
-It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it openvpnas /bin/bash`.
+It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it openvpn-as /bin/bash`.
 
 ### User / Group Identifiers
 
@@ -41,8 +41,8 @@ To change the password (recommended) do
 
 ## Updates
 
-* Upgrade dependencies to the latest version simply `docker restart openvpnas`.
-* To monitor the logs of the container in realtime `docker logs -f openvpnas`.
+* Upgrade dependencies to the latest version simply `docker restart openvpn-as`.
+* To monitor the logs of the container in realtime `docker logs -f openvpn-as`.
 
 
 
