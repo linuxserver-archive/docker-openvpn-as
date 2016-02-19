@@ -8,7 +8,7 @@ ENV APTLIST="iptables"
 RUN apt-get update -q && \
 apt-get install \
 $APTLIST -qy && \
-curl -o /tmp/openvpn.deb http://swupdate.openvpn.org/as/openvpn-as-2.0.20-Ubuntu14.amd_64.deb && \
+curl -o /tmp/openvpn.deb http://swupdate.openvpn.org/as/openvpn-as-2.0.24-Ubuntu14.amd_64.deb && \
 dpkg -i /tmp/openvpn.deb && \
 apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
