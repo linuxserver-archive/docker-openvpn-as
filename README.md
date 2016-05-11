@@ -34,10 +34,11 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Setting up the application 
 
-The admin interface is available at https://<ip>:943 with a default user/password of admin/password.
+The admin interface is available at `https://<ip>:943/admin` with a default user/password of admin/password.
 To change the password (recommended) do
-`docker exec -it openvpn-as passwd admin` 
+`docker exec -it openvpn-as passwd admin`  (You will have to repeat this step if you update or reinstall this container)
 
+For user accounts to be persistent, switch the "Authentication" in the webui from "PAM" to "Local" and then set up the user accounts with their passwords.
 
 ## Updates
 
