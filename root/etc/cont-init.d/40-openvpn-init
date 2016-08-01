@@ -1,0 +1,18 @@
+#!/usr/bin/with-contenv bash
+
+NOASCONFIG="DELETE\n"
+ASCONFIG="yes\nyes\n1\n943\n9443\nyes\nyes\nno\nyes\nno\nadmin\n\n"
+
+if [ ! -f "/config/etc/as.conf" ]; then
+CONFINPUT=$ASCONFIG
+else
+CONFINPUT=$NOASCONFIG$ASCONFIG
+fi
+
+if [[ $(find /config/etc/db -type f | wc -l) -eq 0 || ! -f "/config/etc/as.conf" ]]; then
+printf "${CONFINPUT}" | /config/bin/ovpn-init
+/etc/init.d/openvpnas stop
+fi
+
+chown -R abc:abc /config
+

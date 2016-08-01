@@ -1,0 +1,19 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p /openvpn{/pid,/sock,/tmp}  /config/log /config/etc/tmp
+
+# copy config
+[[ ! -f /config/bin/ovpn-init ]] && \
+	cp -pr /usr/local/openvpn_as/* /config/
+
+# clear old pid and sock files
+[[ -e /openvpn/sock/* ]] && \
+	rm -rf /openvpn/sock/*
+[[ -e /openvpn/pid/* ]] && \
+	rm -rf /openvpn/pid/*
+
+# permissions
+chown abc:abc /config/log /config/etc/tmp
+chmod -R 755 /openvpn
+

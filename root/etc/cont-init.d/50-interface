@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv bash
+
+if [ -z "$INTERFACE" ]; then
+SET_INTERFACE="eth0"
+else
+SET_INTERFACE=$INTERFACE
+fi
+
+/config/scripts/confdba -mk "admin_ui.https.ip_address" -v "$SET_INTERFACE"
+/config/scripts/confdba -mk "cs.https.ip_address" -v "$SET_INTERFACE"
+/config/scripts/confdba -mk "vpn.daemon.0.listen.ip_address" -v "$SET_INTERFACE"
+/config/scripts/confdba -mk "vpn.daemon.0.server.ip_address" -v "$SET_INTERFACE"
+
