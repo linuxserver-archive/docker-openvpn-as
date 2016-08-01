@@ -1,3 +1,0 @@
-#!/bin/bash
-/config/scripts/openvpnas --nodaemon --umask=0077 --pidfile=/openvpn/pid/openvpn.pid --logfile=/config/log/openvpn.log
-
