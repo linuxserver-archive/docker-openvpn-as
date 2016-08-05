@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bash
 
 NOASCONFIG="DELETE\n"
 ASCONFIG="yes\nyes\n1\n943\n9443\nyes\nyes\nno\nyes\nno\nadmin\n\n"
@@ -15,3 +15,4 @@ printf "${CONFINPUT}" | /config/bin/ovpn-init
 fi
 
 chown -R abc:abc /config
+

@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+
+if [ "$(cat /etc/timezone)" != "${TZ}" ]
+then
+	if [ -d "/usr/share/zoneinfo/${TZ}" ] || \
+	[ ! -e "/usr/share/zoneinfo/${TZ}" ] || \
+	[ -z "${TZ}" ]
+	then TZ="Etc/UTC"
+	fi
+ln -fs "/usr/share/zoneinfo/${TZ}" /etc/localtime
+exec  dpkg-reconfigure -f noninteractive tzdata
+fi
