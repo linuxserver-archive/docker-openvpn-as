@@ -6,6 +6,10 @@ The [LinuxServer.io](https://linuxserver.io) team brings you another container r
 * [Podcast](https://www.linuxserver.io/index.php/category/podcast/) covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/openvpn-as
+[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/openvpn-as.svg)][hub]
+[![Docker Stars](https://img.shields.io/docker/stars/linuxserver/openvpn-as.svg)][hub]
+[![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-openvpn-as)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-openvpn-as/)
+[hub]: https://hub.docker.com/r/linuxserver/openvpn-as/
 
 OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments. OpenVPN Access Server supports a wide range of configurations, including secure and granular remote access to internal network and/ or private cloud network resources and applications with fine-grained access control. [Openvpn-as](https://openvpn.net/index.php/access-server/overview.html)
 
@@ -64,6 +68,7 @@ For user accounts to be persistent, switch the "Authentication" in the webui fro
 
 ## Versions
 
++ **28.08.16:** Add badges to README.
 + **01.08.16:** Rebase to xenial.
 + **18.09.15:** Initial Release. 
 
