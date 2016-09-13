@@ -73,6 +73,7 @@ For user accounts to be persistent, switch the "Authentication" in the webui fro
 
 ## Versions
 
++ **13.09.16:** Rebuild due to push error to hub on last build.
 + **10.09.16:** Add layer badges to README.
 + **28.08.16:** Add badges to README.
 + **01.08.16:** Rebase to xenial.
