@@ -11,7 +11,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/openvpn-as
-[![](https://images.microbadger.com/badges/image/linuxserver/openvpn-as.svg)](http://microbadger.com/images/linuxserver/openvpn-as "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/openvpn-as.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/openvpn-as.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-openvpn-as)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-openvpn-as/)
+[![](https://images.microbadger.com/badges/version/linuxserver/openvpn-as.svg)](https://microbadger.com/images/linuxserver/openvpn-as "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/openvpn-as.svg)](http://microbadger.com/images/linuxserver/openvpn-as "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/openvpn-as.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/openvpn-as.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-openvpn-as)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-openvpn-as/)
 [hub]: https://hub.docker.com/r/linuxserver/openvpn-as/
 
 OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments. OpenVPN Access Server supports a wide range of configurations, including secure and granular remote access to internal network and/ or private cloud network resources and applications with fine-grained access control. [Openvpn-as](https://openvpn.net/index.php/access-server/overview.html)
@@ -70,9 +70,17 @@ For user accounts to be persistent, switch the "Authentication" in the webui fro
 * To monitor the logs of the container in realtime `docker logs -f openvpn-as`.
 
 
+* container version number 
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' openvpn-as`
+
+* image version number
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' linuxserver/openvpn-as`
 
 ## Versions
 
++ **14-10-16:** Add version layer information.
 + **13.09.16:** Rebuild due to push error to hub on last build.
 + **10.09.16:** Add layer badges to README.
 + **28.08.16:** Add badges to README.
