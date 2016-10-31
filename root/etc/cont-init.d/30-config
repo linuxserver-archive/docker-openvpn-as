@@ -8,12 +8,21 @@ mkdir -p /openvpn{/pid,/sock,/tmp}  /config/log /config/etc/tmp
 	cp -pr /usr/local/openvpn_as/* /config/
 
 # clear old pid and sock files
-[[ -e /openvpn/sock/* ]] && \
-	rm -rf /openvpn/sock/*
-[[ -e /openvpn/pid/* ]] && \
-	rm -rf /openvpn/pid/*
+for file in /openvpn/sock/*
+	do
+		if [ -e "$file" ]; then
+		rm -rf "$file"
+		fi
+	done
+
+for file in /openvpn/pid/*
+	do
+		if [ -e "$file" ]; then
+		rm -rf "$file"
+		fi
+	done
+
 
 # permissions
 chown abc:abc /config/log /config/etc/tmp
 chmod -R 755 /openvpn
-
