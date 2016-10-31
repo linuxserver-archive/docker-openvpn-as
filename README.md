@@ -85,6 +85,7 @@ For user accounts to be persistent, switch the "Authentication" in the webui fro
 
 ## Versions
 
++ **31.10.16:** Pick up version 2.14b.
 + **14.10.16:** Add version layer information.
 + **13.09.16:** Rebuild due to push error to hub on last build.
 + **10.09.16:** Add layer badges to README.
