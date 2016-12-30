@@ -44,7 +44,7 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-e PUID` for UserID - see below for explanation
 * `-e TZ` for Timezone setting
 * `-e INTERFACE` setting interface for openvpn-as *default is eth0*
-* `--net=host` IMPORTANT, will not operate unless in host mode.
+* `--net=host` IMPORTANT, for most users, needs to operate in host mode.
 * `--privileged` IMPORTANT, will not operate unless in privileged mode.
 
 It is based on ubuntu xenial with S6 overlay, for shell access whilst the container is running do `docker exec -it openvpn-as /bin/bash`.
