@@ -1,37 +1,63 @@
-FROM linuxserver/baseimage
+FROM lsiobase/xenial
+MAINTAINER sparklyballs
 
-MAINTAINER Sparklyballs <sparklyballs@linuxserver.io>
+# set version label
+ARG BUILD_DATE
+ARG VERSION
+LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
-ENV APTLIST="iptables"
+# package version
+ARG OPENVPN_VER="2.1.4b"
 
-# install packages
-RUN apt-get update -q && \
-apt-get install \
-$APTLIST -qy && \
-curl -o /tmp/openvpn.deb http://swupdate.openvpn.org/as/openvpn-as-2.0.24-Ubuntu14.amd_64.deb && \
-dpkg -i /tmp/openvpn.deb && \
-apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+# environment settings
+ARG DEBIAN_FRONTEND="noninteractive"
 
-#Adding Custom files
-ADD init/ /etc/my_init.d/
-ADD services/ /etc/service/
-RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh && \
+# install openvpn-as
+RUN \
+ apt-get update && \
+ apt-get install -y \
+	iptables \
+	net-tools && \
 
-# give abc user a home folder
-usermod -d /config abc && \
+curl -o \
+ /tmp/openvpn.deb -L \
+	http://swupdate.openvpn.org/as/openvpn-as-${OPENVPN_VER}-Ubuntu16.amd_64.deb && \
+ dpkg -i /tmp/openvpn.deb && \
 
-# create admin user and set default password for it
-useradd -s /sbin/nologin admin && \
-echo "admin:password" | chpasswd && \
+# cleanup
+ apt-get clean && \
+ rm -rf \
+	/tmp/* \
+	/usr/local/openvpn_as/etc/db/* \
+	/usr/local/openvpn_as/etc/sock \
+	/usr/local/openvpn_as/etc/tmp \
+	/usr/local/openvpn_as/tmp \
+	/var/lib/apt/lists/* \
+	/var/tmp/*
 
-# set some config for openvpn-as
-find /usr/local/openvpn_as/scripts -type f -print0 | xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g' && \
-find /usr/local/openvpn_as/bin -type f -print0 | xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g' && \
-sed -i 's#=openvpn_as#=abc#g' /usr/local/openvpn_as/etc/as_templ.conf && \
-sed -i 's#~/tmp#/openvpn/tmp#g' /usr/local/openvpn_as/etc/as_templ.conf && \
-sed -i 's#~/sock#/openvpn/sock#g' /usr/local/openvpn_as/etc/as_templ.conf
+# ensure abc using /config as home folder
+RUN \
+ usermod -d /config abc && \
 
-# Volumes and Ports
-VOLUME /config
+# create admin user and set default password for it
+ useradd -s /sbin/nologin admin && \
+ echo "admin:password" | chpasswd && \
+
+# set some config for openvpn-as
+ find /usr/local/openvpn_as/scripts -type f -print0 | \
+	xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g' && \
+ find /usr/local/openvpn_as/bin -type f -print0 | \
+	xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g' && \
+
+ sed -i \
+		-e 's#=openvpn_as#=abc#g' \
+		-e 's#~/tmp#/openvpn/tmp#g' \
+		-e 's#~/sock#/openvpn/sock#g' \
+	/usr/local/openvpn_as/etc/as_templ.conf
+
+# add local files
+COPY /root /
+
+# ports and volumes
 EXPOSE 943/tcp 1194/udp 9443/tcp
-
+VOLUME /config
