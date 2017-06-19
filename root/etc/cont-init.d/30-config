@@ -23,6 +23,9 @@ for file in /openvpn/pid/*
 		fi
 	done
 
+# change admin password if set
+[[ ! -z "$PASSWD" ]] && \
+	echo "admin:${PASSWD}" | chpasswd
 
 # permissions
 chown abc:abc /config/log /config/etc/tmp

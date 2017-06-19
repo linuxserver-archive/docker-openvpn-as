@@ -28,6 +28,7 @@ docker create \
 -e PGID=<gid> -e PUID=<uid> \
 -e TZ=<timezone> \
 -e INTERFACE=<interface> \
+-e PASSWD=<adminpassword> \
 --net=host --privileged \
 linuxserver/openvpn-as
 ```
@@ -45,6 +46,7 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-e PUID` for UserID - see below for explanation
 * `-e TZ` for Timezone setting
 * `-e INTERFACE` setting interface for openvpn-as *default is eth0*
+* `-e PASSWD` optional variable to change the admin password
 * `--net=host` IMPORTANT, for most users, needs to operate in host mode.
 * `--privileged` IMPORTANT, will not operate unless in privileged mode.
 
@@ -65,11 +67,9 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 ## Setting up the application 
 
-The admin interface is available at `https://<ip>:943/admin` with a default user/password of admin/password.
-To change the password (recommended) do
-`docker exec -it openvpn-as passwd admin`  (You will have to repeat this step if you update or reinstall this container)
+The admin interface is available at `https://<ip>:943/admin` with a default user/password of admin/password.  (unless changed with the PASSWD variable)
 
-For user accounts to be persistent, switch the "Authentication" in the webui from "PAM" to "Local" and then set up the user accounts with their passwords.
+For user accounts to be persistent, switch the "Authentication" in the webui from "PAM" to "Local" and then set up the user accounts with their passwords through the gui.
 
 ## Info
 
@@ -86,6 +86,7 @@ For user accounts to be persistent, switch the "Authentication" in the webui fro
 
 ## Versions
 
++ **19.06.17:** Add ability to change admin password through optional variable
 + **31.10.16:** Pick up version 2.14b.
 + **14.10.16:** Add version layer information.
 + **13.09.16:** Rebuild due to push error to hub on last build.
