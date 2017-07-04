@@ -34,7 +34,7 @@ linuxserver/openvpn-as
 
 ## Parameters
 
-`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
+`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side.
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
 So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
@@ -63,7 +63,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 ```
 
 
-## Setting up the application 
+## Setting up the application
 
 The admin interface is available at `https://<ip>:943/admin` with a default user/password of admin/password
 
@@ -79,7 +79,7 @@ The "admin" account is a system (PAM) account and after container update or recr
 * To monitor the logs of the container in realtime `docker logs -f openvpn-as`.
 
 
-* container version number 
+* container version number
 
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' openvpn-as`
 
@@ -89,12 +89,12 @@ The "admin" account is a system (PAM) account and after container update or recr
 
 ## Versions
 
++ **04.07.17:** Pick up version 2.1.9
 + **19.06.17:** Switch default authentication method to local, update readme on how to deactivate the admin user
-+ **31.10.16:** Pick up version 2.14b.
++ **31.10.16:** Pick up version 2.14.b.
 + **14.10.16:** Add version layer information.
 + **13.09.16:** Rebuild due to push error to hub on last build.
 + **10.09.16:** Add layer badges to README.
 + **28.08.16:** Add badges to README.
 + **01.08.16:** Rebase to xenial.
-+ **18.09.15:** Initial Release. 
-
++ **18.09.15:** Initial Release.

@@ -11,8 +11,7 @@ fi
 
 if [[ $(find /config/etc/db -type f | wc -l) -eq 0 || ! -f "/config/etc/as.conf" ]]; then
 # shellcheck disable=SC2059
-printf  "${CONFINPUT}" | /config/bin/ovpn-init
-/etc/init.d/openvpnas stop
+printf  "${CONFINPUT}" | /config/bin/ovpn-init --no_start
 fi
 
 chown -R abc:abc \
