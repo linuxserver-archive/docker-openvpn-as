@@ -86,11 +86,11 @@ For user accounts to be persistent, switch the "Authentication" in the webui fro
 
 ## Versions
 
-+ **31.10.16:** Pick up version 2.14b.
++ **07.07.17:** Pick up version 2.1.9.
++ **31.10.16:** Pick up version 2.1.4.
 + **14.10.16:** Add version layer information.
 + **13.09.16:** Rebuild due to push error to hub on last build.
 + **10.09.16:** Add layer badges to README.
 + **28.08.16:** Add badges to README.
 + **01.08.16:** Rebase to xenial.
-+ **18.09.15:** Initial Release. 
-
++ **18.09.15:** Initial Release.
