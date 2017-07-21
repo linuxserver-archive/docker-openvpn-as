@@ -17,7 +17,8 @@ RUN \
  apt-get update && \
  apt-get install -y \
 	iptables \
-	net-tools && \
+	net-tools \
+	rsync && \
 
 curl -o \
  /tmp/openvpn.deb -L \
