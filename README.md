@@ -13,7 +13,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/openvpn-as
-[![](https://images.microbadger.com/badges/version/linuxserver/openvpn-as.svg)](https://microbadger.com/images/linuxserver/openvpn-as "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/openvpn-as.svg)](http://microbadger.com/images/linuxserver/openvpn-as "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/openvpn-as.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/openvpn-as.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-openvpn-as)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-openvpn-as/)
+[![](https://images.microbadger.com/badges/version/linuxserver/openvpn-as.svg)](https://microbadger.com/images/linuxserver/openvpn-as "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/openvpn-as.svg)](https://microbadger.com/images/linuxserver/openvpn-as "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/openvpn-as.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/openvpn-as.svg)][hub][![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Builders/x86-64/x86-64-openvpn-as)](https://ci.linuxserver.io/job/Docker-Builders/job/x86-64/job/x86-64-openvpn-as/)
 
 OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments. OpenVPN Access Server supports a wide range of configurations, including secure and granular remote access to internal network and/ or private cloud network resources and applications with fine-grained access control. [Openvpn-as](https://openvpn.net/index.php/access-server/overview.html)
 
@@ -89,12 +89,13 @@ The "admin" account is a system (PAM) account and after container update or recr
 
 ## Versions
 
-+ **19.06.17:** Switch default authentication method to local, update readme on how to deactivate the admin user
-+ **31.10.16:** Pick up version 2.14b.
++ **31.07.17:** Switch default authentication method to local, update readme on how to deactivate the admin user
++ **31.07.17:** Fix updates of existing openvpn-as installs.
++ **07.07.17:** Pick up version 2.1.9.
++ **31.10.16:** Pick up version 2.1.4.
 + **14.10.16:** Add version layer information.
 + **13.09.16:** Rebuild due to push error to hub on last build.
 + **10.09.16:** Add layer badges to README.
 + **28.08.16:** Add badges to README.
 + **01.08.16:** Rebase to xenial.
-+ **18.09.15:** Initial Release. 
-
++ **18.09.15:** Initial Release.

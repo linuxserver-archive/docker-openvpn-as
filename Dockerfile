@@ -7,7 +7,7 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # package version
-ARG OPENVPN_VER="2.1.4b"
+ARG OPENVPN_VER="2.1.9"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
@@ -17,7 +17,8 @@ RUN \
  apt-get update && \
  apt-get install -y \
 	iptables \
-	net-tools && \
+	net-tools \
+	rsync && \
 
 curl -o \
  /tmp/openvpn.deb -L \
