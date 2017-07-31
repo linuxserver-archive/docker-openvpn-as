@@ -3,9 +3,12 @@
 # make folders
 mkdir -p /openvpn{/pid,/sock,/tmp}  /config/log /config/etc/tmp
 
-# copy config
-[[ ! -f /config/bin/ovpn-init ]] && \
+# copy config or update
+if [ ! -f /config/bin/ovpn-init ]; then
 	cp -pr /usr/local/openvpn_as/* /config/
+else
+	rsync -rlptD --exclude="/etc/as.conf" --exclude="/etc/config.json" --exclude="/tmp" /usr/local/openvpn_as/ /config/
+fi
 
 # clear old sock files
 for file in /openvpn/sock/*
