@@ -86,7 +86,7 @@ For user accounts to be persistent, switch the "Authentication" in the webui fro
 
 ## Versions
 
-+ **20.07.17:** Fix updates of existing openvpn-as installs.
++ **31.07.17:** Fix updates of existing openvpn-as installs.
 + **07.07.17:** Pick up version 2.1.9.
 + **31.10.16:** Pick up version 2.1.4.
 + **14.10.16:** Add version layer information.
