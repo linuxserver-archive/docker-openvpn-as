@@ -65,11 +65,14 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 ## Setting up the application 
 
-The admin interface is available at `https://<ip>:943/admin` with a default user/password of admin/password.
-To change the password (recommended) do
-`docker exec -it openvpn-as passwd admin`  (You will have to repeat this step if you update or reinstall this container)
+The admin interface is available at `https://<ip>:943/admin` with a default user/password of admin/password
 
-For user accounts to be persistent, switch the "Authentication" in the webui from "PAM" to "Local" and then set up the user accounts with their passwords.
+During first login, make sure that the "Authentication" in the webui is set to "Local" instead of "PAM". Then set up the user accounts with their passwords (user accounts created under PAM do not survive container update or recreation).
+
+The "admin" account is a system (PAM) account and after container update or recreation, its password reverts back to the default. It is highly recommended to block this user's access for security reasons:
+1) Set another user as an admin,
+2) Delete the "admin" user in the gui,
+3) Modify the `as.conf` file under config/etc and replace the line `boot_pam_users.0=admin` with `#boot_pam_users.0=admin` (this only has to be done once and will survive container recreation)
 
 ## Info
 
@@ -86,6 +89,7 @@ For user accounts to be persistent, switch the "Authentication" in the webui fro
 
 ## Versions
 
++ **18.08.17:** Switch default authentication method to local, update readme on how to deactivate the admin user
 + **31.07.17:** Fix updates of existing openvpn-as installs.
 + **07.07.17:** Pick up version 2.1.9.
 + **31.10.16:** Pick up version 2.1.4.
