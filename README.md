@@ -89,7 +89,7 @@ The "admin" account is a system (PAM) account and after container update or recr
 
 ## Versions
 
-+ **31.07.17:** Switch default authentication method to local, update readme on how to deactivate the admin user
++ **18.08.17:** Switch default authentication method to local, update readme on how to deactivate the admin user
 + **31.07.17:** Fix updates of existing openvpn-as installs.
 + **07.07.17:** Pick up version 2.1.9.
 + **31.10.16:** Pick up version 2.1.4.
