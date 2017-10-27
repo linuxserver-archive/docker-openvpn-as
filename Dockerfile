@@ -7,7 +7,7 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # package version
-ARG OPENVPN_VER="2.1.9"
+ARG OPENVPN_VER="2.1.12"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
