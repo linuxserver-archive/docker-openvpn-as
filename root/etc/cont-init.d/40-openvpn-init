@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
-NOASCONFIG="DELETE\n"
-ASCONFIG="yes\nyes\n1\n943\n9443\nyes\nyes\nyes\nyes\nno\nadmin\n\n"
+NOASCONFIG='DELETE\n'
+ASCONFIG='yes\nyes\n1\n943\n9443\nyes\nyes\nyes\nyes\nno\nadmin\n\n'
 
 if [ ! -f "/config/etc/as.conf" ]; then
 CONFINPUT=$ASCONFIG
