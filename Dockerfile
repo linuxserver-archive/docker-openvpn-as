@@ -1,31 +1,45 @@
 FROM lsiobase/xenial
-MAINTAINER sparklyballs
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="sparklyballs"
 
-# package version
+# package versions
 ARG OPENVPN_VER="2.1.12"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 
-# install openvpn-as
 RUN \
+ echo "**** install packages ****" && \
  apt-get update && \
  apt-get install -y \
 	iptables \
 	net-tools \
 	rsync && \
-
-curl -o \
+ echo "**** install openvpn-as ****" && \
+ curl -o \
  /tmp/openvpn.deb -L \
 	http://swupdate.openvpn.org/as/openvpn-as-${OPENVPN_VER}-Ubuntu16.amd_64.deb && \
  dpkg -i /tmp/openvpn.deb && \
-
-# cleanup
+ echo "**** ensure home folder for abc user set to /config ****" && \
+ usermod -d /config abc && \
+ echo "**** create admin user and set default password for it ****" && \
+ useradd -s /sbin/nologin admin && \
+ echo "admin:password" | chpasswd && \
+ echo "**** configure openvpn-as ****" && \
+ find /usr/local/openvpn_as/scripts -type f -print0 | \
+	xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g' && \
+ find /usr/local/openvpn_as/bin -type f -print0 | \
+	xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g' && \
+ sed -i \
+		-e 's#=openvpn_as#=abc#g' \
+		-e 's#~/tmp#/openvpn/tmp#g' \
+		-e 's#~/sock#/openvpn/sock#g' \
+	/usr/local/openvpn_as/etc/as_templ.conf && \
+ echo "**** cleanup ****" && \
  apt-get clean && \
  rm -rf \
 	/tmp/* \
@@ -35,26 +49,6 @@ curl -o \
 	/usr/local/openvpn_as/tmp \
 	/var/lib/apt/lists/* \
 	/var/tmp/*
-
-# ensure abc using /config as home folder
-RUN \
- usermod -d /config abc && \
-
-# create admin user and set default password for it
- useradd -s /sbin/nologin admin && \
- echo "admin:password" | chpasswd && \
-
-# set some config for openvpn-as
- find /usr/local/openvpn_as/scripts -type f -print0 | \
-	xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g' && \
- find /usr/local/openvpn_as/bin -type f -print0 | \
-	xargs -0 sed -i 's#/usr/local/openvpn_as#/config#g' && \
-
- sed -i \
-		-e 's#=openvpn_as#=abc#g' \
-		-e 's#~/tmp#/openvpn/tmp#g' \
-		-e 's#~/sock#/openvpn/sock#g' \
-	/usr/local/openvpn_as/etc/as_templ.conf
 
 # add local files
 COPY /root /
