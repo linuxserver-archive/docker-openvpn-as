@@ -89,12 +89,13 @@ The "admin" account is a system (PAM) account and after container update or recr
 
 ## Versions
 
++ **23.03.18:** Bump to version 2.5.
 + **14.12.17:** Consolidate layers and fix continuation lines.
-+ **25.10.17:** Pick up version 2.1.12.
++ **25.10.17:** Bump to version 2.1.12.
 + **18.08.17:** Switch default authentication method to local, update readme on how to deactivate the admin user
 + **31.07.17:** Fix updates of existing openvpn-as installs.
-+ **07.07.17:** Pick up version 2.1.9.
-+ **31.10.16:** Pick up version 2.1.4.
++ **07.07.17:** Bump to version 2.1.9.
++ **31.10.16:** Bump to version 2.1.4.
 + **14.10.16:** Add version layer information.
 + **13.09.16:** Rebuild due to push error to hub on last build.
 + **10.09.16:** Add layer badges to README.
