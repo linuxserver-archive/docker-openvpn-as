@@ -74,6 +74,8 @@ The "admin" account is a system (PAM) account and after container update or recr
 2) Delete the "admin" user in the gui,
 3) Modify the `as.conf` file under config/etc and replace the line `boot_pam_users.0=admin` with `#boot_pam_users.0=admin` (this only has to be done once and will survive container recreation)
 
+By default, "service forwarding" is active, which means the admin and the client guis are also served over the vpn server (tcp) port. We recommend that in the gui, under "network settings", you turn off the service forwarding for the two servers so that they are not accessible over the internet (brute forcing a user/pass would allow an attacker access to the server gui where they can generate their own certs to gain access to your lan).
+
 ## Info
 
 * To monitor the logs of the container in realtime `docker logs -f openvpn-as`.
