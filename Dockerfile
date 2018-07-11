@@ -7,7 +7,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="sparklyballs"
 
 # package versions
-ARG OPENVPN_VER="2.5"
+ARG OPENVPN_VER="2.5.2"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
@@ -22,7 +22,7 @@ RUN \
  echo "**** install openvpn-as ****" && \
  curl -o \
  /tmp/openvpn.deb -L \
-	http://swupdate.openvpn.org/as/openvpn-as-${OPENVPN_VER}-Ubuntu16.amd_64.deb && \
+	"http://swupdate.openvpn.org/as/openvpn-as-${OPENVPN_VER}-Ubuntu16.amd_64.deb" && \
  dpkg -i /tmp/openvpn.deb && \
  echo "**** ensure home folder for abc user set to /config ****" && \
  usermod -d /config abc && \
