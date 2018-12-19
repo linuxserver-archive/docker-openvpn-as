@@ -7,7 +7,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="sparklyballs"
 
 # package versions
-ARG OPENVPN_VER="2.5.2"
+ARG OPENVPN_VER="2.6.1"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"

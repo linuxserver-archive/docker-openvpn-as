@@ -89,6 +89,7 @@ The "admin" account is a system (PAM) account and after container update or recr
 
 ## Versions
 
++ **19.12.18:** Bump to version 2.6.1.
 + **10.07.18:** Bump to version 2.5.2.
 + **23.03.18:** Bump to version 2.5.
 + **14.12.17:** Consolidate layers and fix continuation lines.
