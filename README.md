@@ -28,7 +28,6 @@ docker create \
 -v <path to data>:/config \
 -e PGID=<gid> -e PUID=<uid> \
 -e TZ=<timezone> \
--e INTERFACE=<interface> \
 linuxserver/openvpn-as
 ```
 
@@ -44,9 +43,8 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 * `-e TZ` for Timezone setting
-* `-e INTERFACE` setting interface for openvpn-as *default is eth0*
-* `--net=host` IMPORTANT, for most users, needs to operate in host mode.
-* `--privileged` IMPORTANT, will not operate unless in privileged mode.
+* `--cap-add=NET_ADMIN` IMPORTANT, will not operate without this parameter.
+* `-e INTERFACE` *OPTIONAL* - only needed if run in host networking (default is eth0).
 
 It is based on ubuntu xenial with S6 overlay, for shell access whilst the container is running do `docker exec -it openvpn-as /bin/bash`.
 
@@ -70,9 +68,10 @@ The admin interface is available at `https://<ip>:943/admin` with a default user
 During first login, make sure that the "Authentication" in the webui is set to "Local" instead of "PAM". Then set up the user accounts with their passwords (user accounts created under PAM do not survive container update or recreation).
 
 The "admin" account is a system (PAM) account and after container update or recreation, its password reverts back to the default. It is highly recommended to block this user's access for security reasons:
-1) Set another user as an admin,
-2) Delete the "admin" user in the gui,
-3) Modify the `as.conf` file under config/etc and replace the line `boot_pam_users.0=admin` with `#boot_pam_users.0=admin` (this only has to be done once and will survive container recreation)
+1) Create another user and set as an admin,
+2) Log in as the new user,
+3) Delete the "admin" user in the gui,
+4) Modify the `as.conf` file under config/etc and replace the line `boot_pam_users.0=admin` with `#boot_pam_users.0=admin` (this only has to be done once and will survive container recreation)
 
 ## Info
 
@@ -89,7 +88,7 @@ The "admin" account is a system (PAM) account and after container update or recr
 
 ## Versions
 
-+ **26.01.19:** Removed `privileged` and `host` networking requirements, added `cap-add=NET_ADMIN` requirement instead.
++ **26.01.19:** Removed `privileged` and `host` networking requirements, added `cap-add=NET_ADMIN` requirement instead. `INTERFACE` no longer needs to be defined as in bridge mode, it will use the container's eth0 interface by default.
 + **19.12.18:** Bump to version 2.6.1.
 + **10.07.18:** Bump to version 2.5.2.
 + **23.03.18:** Bump to version 2.5.
