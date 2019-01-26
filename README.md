@@ -24,11 +24,11 @@ OpenVPN Access Server is a full featured secure network tunneling VPN software s
 ```
 docker create \
 --name=openvpn-as \
+--cap-add=NET_ADMIN \
 -v <path to data>:/config \
 -e PGID=<gid> -e PUID=<uid> \
 -e TZ=<timezone> \
 -e INTERFACE=<interface> \
---net=host --privileged \
 linuxserver/openvpn-as
 ```
 
@@ -89,6 +89,7 @@ The "admin" account is a system (PAM) account and after container update or recr
 
 ## Versions
 
++ **26.01.19:** Removed `privileged` and `host` networking requirements, added `cap-add=NET_ADMIN` requirement instead.
 + **19.12.18:** Bump to version 2.6.1.
 + **10.07.18:** Bump to version 2.5.2.
 + **23.03.18:** Bump to version 2.5.
