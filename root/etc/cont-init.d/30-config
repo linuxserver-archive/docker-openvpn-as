@@ -1,7 +1,12 @@
 #!/usr/bin/with-contenv bash
 
 # make folders
-mkdir -p /openvpn{/pid,/sock,/tmp}  /config/log /config/etc/tmp
+mkdir -p /openvpn{/pid,/sock,/tmp} /dev/net /config/log /config/etc/tmp
+
+# create tun device
+if [ ! -c /dev/net/tun ]; then
+  mknod /dev/net/tun c 10 200
+fi
 
 # copy config or update
 if [ ! -f /config/bin/ovpn-init ]; then
