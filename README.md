@@ -27,6 +27,9 @@ docker create \
 --cap-add=NET_ADMIN \
 -v <path to data>:/config \
 -e PGID=<gid> -e PUID=<uid> \
+-p 943:943 \
+-p 9443:9443 \
+-p 1194:1194/udp \
 -e TZ=<timezone> \
 linuxserver/openvpn-as
 ```
@@ -42,6 +45,9 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-v /config` - where openvpn-as should store configuration files
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
+* `-p 943` admin gui port
+* `-p 9443` tcp port
+* `-p 1194/udp` udp port
 * `-e TZ` for Timezone setting
 * `--cap-add=NET_ADMIN` IMPORTANT, will not operate without this parameter.
 * `-e INTERFACE` *OPTIONAL* - only needed if run in host networking (default is eth0).
@@ -88,6 +94,7 @@ The "admin" account is a system (PAM) account and after container update or recr
 
 ## Versions
 
++ **31.01.19:** Add port mappings to docker create sample in readme.
 + **26.01.19:** Removed `privileged` and `host` networking requirements, added `cap-add=NET_ADMIN` requirement instead. `INTERFACE` no longer needs to be defined as in bridge mode, it will use the container's eth0 interface by default.
 + **19.12.18:** Bump to version 2.6.1.
 + **10.07.18:** Bump to version 2.5.2.
