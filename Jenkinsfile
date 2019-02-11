@@ -13,7 +13,7 @@ pipeline {
     BUILD_VERSION_ARG = 'OPENVPNAS_VERSION'
     LS_USER = 'linuxserver'
     LS_REPO = 'docker-openvpnas'
-    CONTAINER_NAME = 'openvpn-as'
+    CONTAINER_NAME = 'openvpnas'
     DOCKERHUB_IMAGE = 'linuxserver/openvpn-as'
     DEV_DOCKERHUB_IMAGE = 'lsiodev/openvpn-as'
     PR_DOCKERHUB_IMAGE = 'lspipepr/openvpn-as'
