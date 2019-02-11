@@ -1,0 +1,27 @@
+---
+
+# jenkins variables
+project_name: docker-openvpnas
+external_type: na
+custom_version_command: "curl -w '%{url_effective}' -ILsS https://openvpn.net/downloads/openvpn-as-latest-ubuntu18.amd_64.deb -o /dev/null | awk -F '(openvpn-as-|-Ubuntu18)' '{print $2}'"
+release_type: stable
+release_tag: latest
+ls_branch: master
+repo_vars:
+  - BUILD_VERSION_ARG = 'OPENVPNAS_VERSION'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-openvpnas'
+  - CONTAINER_NAME = 'openvpnas'
+  - DOCKERHUB_IMAGE = 'linuxserver/openvpnas'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/openvpnas'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/openvpnas'
+  - DIST_IMAGE = 'ubuntu'
+  - MULTIARCH='false'
+  - CI='true'
+  - CI_WEB='true'
+  - CI_PORT='943'
+  - CI_SSL='true'
+  - CI_DELAY='120'
+  - CI_DOCKERENV='TZ=US/Pacific'
+  - CI_AUTH='user:password'
+  - CI_WEBPATH='/admin'

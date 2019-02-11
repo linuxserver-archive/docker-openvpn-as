@@ -36,7 +36,7 @@ linuxserver/openvpn-as
 
 ## Parameters
 
-`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
+`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side.
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
 So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
@@ -67,7 +67,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 ```
 
 
-## Setting up the application 
+## Setting up the application
 
 The admin interface is available at `https://<ip>:943/admin` with a default user/password of admin/password
 
@@ -84,7 +84,7 @@ The "admin" account is a system (PAM) account and after container update or recr
 * To monitor the logs of the container in realtime `docker logs -f openvpn-as`.
 
 
-* container version number 
+* container version number
 
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' openvpn-as`
 
@@ -94,6 +94,7 @@ The "admin" account is a system (PAM) account and after container update or recr
 
 ## Versions
 
++ **07.02.19:** Rebase to bionic, add pipeline logic.
 + **31.01.19:** Add port mappings to docker create sample in readme.
 + **26.01.19:** Removed `privileged` and `host` networking requirements, added `cap-add=NET_ADMIN` requirement instead. `INTERFACE` no longer needs to be defined as in bridge mode, it will use the container's eth0 interface by default.
 + **19.12.18:** Bump to version 2.6.1.
