@@ -60,6 +60,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "12.02.19:", desc: "Rename github repo to match the docker hub repo and container name." }
   - { date: "07.02.19:", desc: "Add pipeline logic and multi arch." }
   - { date: "31.01.19:", desc: "Add port mappings to docker create sample in readme." }
   - { date: "26.01.19:", desc: "Removed `privileged` and `host` networking requirements, added `cap-add=NET_ADMIN` requirement instead. `INTERFACE` no longer needs to be defined as in bridge mode, it will use the container's eth0 interface by default." }

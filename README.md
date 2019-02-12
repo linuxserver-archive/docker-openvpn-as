@@ -171,6 +171,7 @@ Below are the instructions for updating containers:
 
 ## Versions
 
+* **12.02.19:** - Rename github repo to match the docker hub repo and container name.
 * **07.02.19:** - Add pipeline logic and multi arch.
 * **31.01.19:** - Add port mappings to docker create sample in readme.
 * **26.01.19:** - Removed `privileged` and `host` networking requirements, added `cap-add=NET_ADMIN` requirement instead. `INTERFACE` no longer needs to be defined as in bridge mode, it will use the container's eth0 interface by default.
