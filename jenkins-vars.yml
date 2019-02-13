@@ -1,7 +1,7 @@
 ---
 
 # jenkins variables
-project_name: docker-openvpnas
+project_name: docker-openvpn-as
 external_type: na
 custom_version_command: "curl -w '%{url_effective}' -ILsS https://openvpn.net/downloads/openvpn-as-latest-ubuntu18.amd_64.deb -o /dev/null | awk -F '(openvpn-as-|-Ubuntu18)' '{print $2}'"
 release_type: stable
@@ -10,8 +10,8 @@ ls_branch: master
 repo_vars:
   - BUILD_VERSION_ARG = 'OPENVPNAS_VERSION'
   - LS_USER = 'linuxserver'
-  - LS_REPO = 'docker-openvpnas'
-  - CONTAINER_NAME = 'openvpnas'
+  - LS_REPO = 'docker-openvpn-as'
+  - CONTAINER_NAME = 'openvpn-as'
   - DOCKERHUB_IMAGE = 'linuxserver/openvpn-as'
   - DEV_DOCKERHUB_IMAGE = 'lsiodev/openvpn-as'
   - PR_DOCKERHUB_IMAGE = 'lspipepr/openvpn-as'
