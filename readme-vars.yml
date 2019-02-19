@@ -22,6 +22,7 @@ param_usage_include_net: false
 param_usage_include_env: true
 param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
+  - { env_var: "INTERFACE", env_value: "<interface name>", desc: "Needed if run in bridge networking." }
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "<path to data>", desc: "Where openvpn-as should store configuration files." }
@@ -38,7 +39,6 @@ cap_add_param_vars:
 # optional container parameters
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "INTERFACE", env_value: "<interface name>", desc: "Only needed if run in host networking (default is eth0)." }
 opt_param_usage_include_vols: false
 opt_param_usage_include_ports: false
 opt_param_device_map: false
@@ -63,7 +63,7 @@ changelogs:
   - { date: "12.02.19:", desc: "Rename github repo to match the docker hub repo and container name." }
   - { date: "07.02.19:", desc: "Add pipeline logic and multi arch." }
   - { date: "31.01.19:", desc: "Add port mappings to docker create sample in readme." }
-  - { date: "26.01.19:", desc: "Removed `privileged` and `host` networking requirements, added `cap-add=NET_ADMIN` requirement instead. `INTERFACE` no longer needs to be defined as in bridge mode, it will use the container's eth0 interface by default." }
+  - { date: "26.01.19:", desc: "Removed `privileged` and `host` networking requirements, added `cap-add=NET_ADMIN` requirement instead. `INTERFACE` no longer needs to be defined in host mode, it will use the container's eth0 interface by default." }
   - { date: "19.12.18:", desc: "Bump to version 2.6.1." }
   - { date: "10.07.18:", desc: "Bump to version 2.5.2." }
   - { date: "23.03.18:", desc: "Bump to version 2.5." }
