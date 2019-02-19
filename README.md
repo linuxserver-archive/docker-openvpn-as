@@ -109,7 +109,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1001` | for UserID - see below for explanation |
 | `-e PGID=1001` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
-| `-e INTERFACE=eth0` | With bridge networking, leave it as eth0 (or don't include at all), if host or macvlan, set it to your host's network interface. |
+| `-e INTERFACE=eth0` | With bridge networking, leave it as eth0 (or don't include at all), if host or macvlan, set it to your host's network interface, found by running `ifconfig` |
 | `-v /config` | Where openvpn-as should store configuration files. |
 
 ## User / Group Identifiers
