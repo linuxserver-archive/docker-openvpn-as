@@ -1,4 +1,4 @@
-FROM lsiobase/ubuntu:bionic
+FROM lsiobase/ubuntu:xenial
 
 # set version label
 ARG BUILD_DATE
@@ -20,12 +20,12 @@ RUN \
  echo "**** install openvpn-as ****" && \
  if [ -z ${OPENVPNAS_VERSION+x} ]; then \
 	OPENVPNAS_VERSION=$(curl -w "%{url_effective}" -ILsS -o /dev/null \
-	https://openvpn.net/downloads/openvpn-as-latest-ubuntu18.amd_64.deb \
-	| awk -F '(openvpn-as-|-Ubuntu18)' '{print $2}'); \
+	https://openvpn.net/downloads/openvpn-as-latest-ubuntu16.amd_64.deb \
+	| awk -F '(openvpn-as-|-Ubuntu16)' '{print $2}'); \
  fi && \
  curl -o \
  /tmp/openvpn.deb -L \
-	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu18.amd_64.deb" && \
+	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu16.amd_64.deb" && \
  dpkg -i /tmp/openvpn.deb && \
  echo "**** ensure home folder for abc user set to /config ****" && \
  usermod -d /config abc && \
