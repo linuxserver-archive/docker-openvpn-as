@@ -171,6 +171,7 @@ Below are the instructions for updating containers:
 
 ## Versions
 
+* **21.02.19:** - Rebase to xenial due to incompatibility issues on some older host OSes.
 * **12.02.19:** - Rename github repo to match the docker hub repo and container name.
 * **07.02.19:** - Add pipeline logic and multi arch.
 * **31.01.19:** - Add port mappings to docker create sample in readme.
