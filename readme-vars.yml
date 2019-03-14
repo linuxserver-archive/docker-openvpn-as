@@ -60,6 +60,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "14.03.19:", desc: "Update deb package URL." }
   - { date: "21.02.19:", desc: "Rebase to xenial due to incompatibility issues on some older host OSes." }
   - { date: "12.02.19:", desc: "Rename github repo to match the docker hub repo and container name." }
   - { date: "07.02.19:", desc: "Add pipeline logic and multi arch." }
