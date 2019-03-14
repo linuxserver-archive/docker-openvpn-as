@@ -122,7 +122,7 @@ ncurses-base/now 6.0+20160213-1ubuntu1
 ncurses-bin/now 6.0+20160213-1ubuntu1
 net-tools/now 1.60-26ubuntu1
 openssl/now 1.0.2g-1ubuntu4.15
-openvpn-as/now 2.6.1-Ubuntu16
+openvpn-as/now 2.7.2-1b641dfd-Ubuntu16
 passwd/now 1:4.2-3.1ubuntu5.3
 perl-base/now 5.22.1-9ubuntu0.6
 procps/now 2:3.3.10-4ubuntu2.4
