@@ -25,7 +25,7 @@ RUN \
  fi && \
  curl -o \
  /tmp/openvpn.deb -L \
-	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu16.amd64.deb" && \
+	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu16.amd_64.deb" && \
  dpkg -i /tmp/openvpn.deb && \
  echo "**** ensure home folder for abc user set to /config ****" && \
  usermod -d /config abc && \
