@@ -15,6 +15,7 @@ RUN \
  apt-get update && \
  apt-get install -y \
 	iptables \
+	libmysqlclient-dev \
 	net-tools \
 	rsync \
 	sqlite3 && \
