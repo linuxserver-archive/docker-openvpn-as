@@ -51,6 +51,7 @@ if [ -f /openvpn/openvpn.deb ]; then
 		echo "restoring as.conf"
 		cp /config/backup/as.conf /config/etc/as.conf
 		rm -rf /config/backup
+	fi
 fi
 
 # clear old sock files
