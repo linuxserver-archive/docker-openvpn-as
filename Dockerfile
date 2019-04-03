@@ -16,7 +16,8 @@ RUN \
  apt-get install -y \
 	iptables \
 	net-tools \
-	rsync && \
+	rsync \
+	sqlite3 && \
  echo "**** download openvpn-as ****" && \
  if [ -z ${OPENVPNAS_VERSION+x} ]; then \
 	OPENVPNAS_VERSION=$(curl -w "%{url_effective}" -ILsS -o /dev/null \
