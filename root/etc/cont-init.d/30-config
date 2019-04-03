@@ -8,6 +8,7 @@ if [ ! -c /dev/net/tun ]; then
   mknod /dev/net/tun c 10 200
 fi
 
+shopt -s extglob
 # install or update openvpn-as
 if [ -f /openvpn/openvpn.deb ]; then
 	rm -rf /usr/local/openvpn_as
@@ -19,8 +20,8 @@ if [ -f /openvpn/openvpn.deb ]; then
 	else
 		echo "existing data found, reinstalling openvpn-as"
 		mkdir -p /config/backup
-		cd /config/etc/db
-		DBFILESBAK=*.db
+		cd /config/etc/db || exit
+		DBFILESBAK="*.db"
 		for f in $DBFILESBAK
 		do
 			echo "backing up $f"
@@ -28,10 +29,8 @@ if [ -f /openvpn/openvpn.deb ]; then
 		done
 		echo "backing up as.conf"
 		cp /config/etc/as.conf /config/backup/as.conf
-		cd /config
-		shopt -s extglob
+		cd /config || exit
 		rm -rf !("backup"|"log")
-		shopt -u extglob
 		dpkg -i /openvpn/openvpn.deb
 		rm /openvpn/openvpn.deb
 		sed -i \
@@ -39,8 +38,8 @@ if [ -f /openvpn/openvpn.deb ]; then
 			-e 's#~/tmp#/openvpn/tmp#g' \
 			-e 's#~/sock#/openvpn/sock#g' \
 			/usr/local/openvpn_as/etc/as_templ.conf
-		cd /config/backup
-		DBFILERES=*.db
+		cd /config/backup || exit
+		DBFILERES="*.db"
 		for f in $DBFILERES
 		do
 			echo "restoring $f"
@@ -53,6 +52,7 @@ if [ -f /openvpn/openvpn.deb ]; then
 		rm -rf /config/backup
 	fi
 fi
+shopt -u extglob
 
 # clear old sock files
 for file in /openvpn/sock/*
