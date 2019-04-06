@@ -8,12 +8,51 @@ if [ ! -c /dev/net/tun ]; then
   mknod /dev/net/tun c 10 200
 fi
 
-# copy config or update
-if [ ! -f /config/bin/ovpn-init ]; then
-	cp -pr /usr/local/openvpn_as/* /config/
-else
-	rsync -rlptD --exclude="/etc/as.conf" --exclude="/etc/config.json" --exclude="/tmp" /usr/local/openvpn_as/ /config/
+shopt -s extglob
+# install or update openvpn-as
+if [ -f /openvpn/openvpn.deb ]; then
+	rm -rf /usr/local/openvpn_as
+	ln -s /config /usr/local/openvpn_as
+	if [ ! -f /config/etc/as.conf ]; then
+		echo "installing openvpn-as for the first time"
+		dpkg -i /openvpn/openvpn.deb
+		rm /openvpn/openvpn.deb
+	else
+		echo "existing data found, reinstalling openvpn-as"
+		mkdir -p /config/backup
+		cd /config/etc/db || exit
+		DBFILESBAK="*.db"
+		for f in $DBFILESBAK
+		do
+			echo "backing up $f"
+			sqlite3 "$f" .dump > /config/backup/"$f"
+		done
+		echo "backing up as.conf"
+		cp /config/etc/as.conf /config/backup/as.conf
+		cd /config || exit
+		rm -rf !("backup"|"log")
+		dpkg -i /openvpn/openvpn.deb
+		rm /openvpn/openvpn.deb
+		sed -i \
+			-e 's#=openvpn_as#=abc#g' \
+			-e 's#~/tmp#/openvpn/tmp#g' \
+			-e 's#~/sock#/openvpn/sock#g' \
+			/usr/local/openvpn_as/etc/as_templ.conf
+		cd /config/backup || exit
+		DBFILERES="*.db"
+		for f in $DBFILERES
+		do
+			echo "restoring $f"
+			rm -f /config/etc/db/"$f"
+			sqlite3 </config/backup/"$f" /config/etc/db/"$f"
+		done
+		rm -f /config/etc/as.conf
+		echo "restoring as.conf"
+		cp /config/backup/as.conf /config/etc/as.conf
+		rm -rf /config/backup
+	fi
 fi
+shopt -u extglob
 
 # clear old sock files
 for file in /openvpn/sock/*
