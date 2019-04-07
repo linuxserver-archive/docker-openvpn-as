@@ -17,6 +17,11 @@ if [ -f /openvpn/openvpn.deb ]; then
 		echo "installing openvpn-as for the first time"
 		dpkg -i /openvpn/openvpn.deb
 		rm /openvpn/openvpn.deb
+		sed -i \
+			-e 's#=openvpn_as#=abc#g' \
+			-e 's#~/tmp#/openvpn/tmp#g' \
+			-e 's#~/sock#/openvpn/sock#g' \
+			/usr/local/openvpn_as/etc/as_templ.conf
 	else
 		echo "existing data found, reinstalling openvpn-as"
 		mkdir -p /config/backup

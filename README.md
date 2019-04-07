@@ -174,6 +174,7 @@ Below are the instructions for updating containers:
 
 ## Versions
 
+* **07.04.19:** - Fix first time config.
 * **03.04.19:** - Big rewrite of the install and update logic of openvpn-as to fix breaking changes (should fix updating from 2.6.1 to 2.7.3), added mysql-client for cluster support.
 * **14.03.19:** - Update deb package URL.
 * **21.02.19:** - Rebase to xenial due to incompatibility issues on some older host OSes.
