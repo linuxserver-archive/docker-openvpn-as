@@ -38,7 +38,7 @@ libattr11:2.4.47-2
 libaudit11:2.4.5-1ubuntu2.1
 libaudit-common1:2.4.5-1ubuntu2.1
 libblkid12.27.1-6ubuntu3.7
-libbz2-1.01.0.6-8
+libbz2-1.01.0.6-8ubuntu0.1
 libc62.23-0ubuntu11
 libc6-dev2.23-0ubuntu11
 libcap21:2.24-12
@@ -115,7 +115,7 @@ libustr-1.0-11.0.4-5
 libuuid12.27.1-6ubuntu3.7
 libwind0-heimdal1.7~git20150920+dfsg-4ubuntu1.16.04.1
 libxtables111.6.0-2ubuntu3
-linux-libc-dev4.4.0-151.178
+linux-libc-dev4.4.0-154.181
 locales2.23-0ubuntu11
 login1:4.2-3.1ubuntu5.4
 lsb-base9.20160110ubuntu0.2
