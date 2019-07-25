@@ -3,7 +3,7 @@ apt1.2.32
 apt-utils1.2.32
 base-files9.4ubuntu4.8
 base-passwd3.5.39
-bash4.3-14ubuntu1.3
+bash4.3-14ubuntu1.4
 bsdutils1:2.27.1-6ubuntu3.7
 ca-certificates20170717~16.04.2
 coreutils8.25-2ubuntu3~16.04
@@ -76,8 +76,8 @@ libldap-2.4-22.4.42+dfsg-2ubuntu3.5
 liblz4-10.0~r131-2ubuntu2
 liblzma55.1.1alpha+20120614-2ubuntu2
 libmount12.27.1-6ubuntu3.7
-libmysqlclient205.7.26-0ubuntu0.16.04.1
-libmysqlclient-dev5.7.26-0ubuntu0.16.04.1
+libmysqlclient205.7.27-0ubuntu0.16.04.1
+libmysqlclient-dev5.7.27-0ubuntu0.16.04.1
 libncurses56.0+20160213-1ubuntu1
 libncursesw56.0+20160213-1ubuntu1
 libnettle63.2-1ubuntu0.16.04.1
@@ -115,7 +115,7 @@ libustr-1.0-11.0.4-5
 libuuid12.27.1-6ubuntu3.7
 libwind0-heimdal1.7~git20150920+dfsg-4ubuntu1.16.04.1
 libxtables111.6.0-2ubuntu3
-linux-libc-dev4.4.0-154.181
+linux-libc-dev4.4.0-157.185
 locales2.23-0ubuntu11
 login1:4.2-3.1ubuntu5.4
 lsb-base9.20160110ubuntu0.2
@@ -125,7 +125,7 @@ manpages-dev4.04-2
 mawk1.3.3-17ubuntu2
 mount2.27.1-6ubuntu3.7
 multiarch-support2.23-0ubuntu11
-mysql-common5.7.26-0ubuntu0.16.04.1
+mysql-common5.7.27-0ubuntu0.16.04.1
 ncurses-base6.0+20160213-1ubuntu1
 ncurses-bin6.0+20160213-1ubuntu1
 net-tools1.60-26ubuntu1
