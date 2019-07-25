@@ -13,7 +13,10 @@ available_architectures:
   - { arch: "{{ arch_x86_64 }}", tag: "latest"}
 
 # development version
-development_versions: false
+development_versions: true
+development_versions_items:
+  - { tag: "latest", desc: "Stable releases based on ubuntu bionic" }
+  - { tag: "xenial", desc: "Stable releases based on ubuntu xenial" }
 
 # container parameters
 common_param_env_vars_enabled: true
@@ -60,6 +63,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "25.07.19:", desc: "Create a xenial branch and rebase master to bionic." }
   - { date: "07.04.19:", desc: "Fix first time config." }
   - { date: "03.04.19:", desc: "Big rewrite of the install and update logic of openvpn-as to fix breaking changes (should fix updating from 2.6.1 to 2.7.3), added mysql-client for cluster support." }
   - { date: "14.03.19:", desc: "Update deb package URL." }
