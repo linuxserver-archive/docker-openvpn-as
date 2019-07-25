@@ -38,6 +38,14 @@ The architectures supported by this image are:
 | :----: | --- |
 | x86-64 | latest |
 
+## Version Tags
+
+This image provides various versions that are available via tags. `latest` tag usually provides the latest stable version. Others are considered under development and caution must be exercised when using them.
+
+| Tag | Description |
+| :----: | --- |
+| latest | Stable releases based on ubuntu bionic |
+| xenial | Stable releases based on ubuntu xenial |
 
 ## Usage
 
@@ -197,6 +205,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **25.07.19:** - Create a xenial branch/tag and rebase master/latest to bionic.
 * **07.04.19:** - Fix first time config.
 * **03.04.19:** - Big rewrite of the install and update logic of openvpn-as to fix breaking changes (should fix updating from 2.6.1 to 2.7.3), added mysql-client for cluster support.
 * **14.03.19:** - Update deb package URL.

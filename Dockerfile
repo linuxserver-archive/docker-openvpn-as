@@ -1,11 +1,11 @@
-FROM lsiobase/ubuntu:xenial
+FROM lsiobase/ubuntu:bionic
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 ARG OPENVPNAS_VERSION 
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="sparklyballs"
+LABEL maintainer="sparklyballs,aptalca"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
@@ -22,13 +22,13 @@ RUN \
  echo "**** download openvpn-as ****" && \
  if [ -z ${OPENVPNAS_VERSION+x} ]; then \
 	OPENVPNAS_VERSION=$(curl -w "%{url_effective}" -ILsS -o /dev/null \
-	https://openvpn.net/downloads/openvpn-as-latest-ubuntu16.amd_64.deb \
-	| awk -F '(openvpn-as-|-Ubuntu16)' '{print $2}'); \
+	https://openvpn.net/downloads/openvpn-as-latest-ubuntu18.amd_64.deb \
+	| awk -F '(openvpn-as-|-Ubuntu18)' '{print $2}'); \
  fi && \
  mkdir /openvpn && \
  curl -o \
  /openvpn/openvpn.deb -L \
-	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu16.amd_64.deb" && \
+	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu18.amd_64.deb" && \
  echo "**** ensure home folder for abc user set to /config ****" && \
  usermod -d /config abc && \
  echo "**** create admin user and set default password for it ****" && \
