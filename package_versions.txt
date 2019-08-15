@@ -115,7 +115,7 @@ libustr-1.0-11.0.4-5
 libuuid12.27.1-6ubuntu3.7
 libwind0-heimdal1.7~git20150920+dfsg-4ubuntu1.16.04.1
 libxtables111.6.0-2ubuntu3
-linux-libc-dev4.4.0-157.185
+linux-libc-dev4.4.0-159.187
 locales2.23-0ubuntu11
 login1:4.2-3.1ubuntu5.4
 lsb-base9.20160110ubuntu0.2
