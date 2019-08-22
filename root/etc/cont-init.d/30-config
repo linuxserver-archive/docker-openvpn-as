@@ -16,6 +16,8 @@ if [ -f /openvpn/openvpn.deb ]; then
 	if [ ! -f /config/etc/as.conf ]; then
 		echo "installing openvpn-as for the first time"
 		dpkg -i /openvpn/openvpn.deb
+		echo "Stopping openvpn-as now; will start again later after configuring"
+		kill `cat /var/run/openvpnas.pid`
 		rm /openvpn/openvpn.deb
 		sed -i \
 			-e 's#=openvpn_as#=abc#g' \
@@ -37,6 +39,8 @@ if [ -f /openvpn/openvpn.deb ]; then
 		cd /config || exit
 		rm -rf !("backup"|"log")
 		dpkg -i /openvpn/openvpn.deb
+		echo "Stopping openvpn-as now; will start again later after configuring"
+		kill `cat /var/run/openvpnas.pid`
 		rm /openvpn/openvpn.deb
 		sed -i \
 			-e 's#=openvpn_as#=abc#g' \
