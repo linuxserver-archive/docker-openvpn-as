@@ -12,6 +12,8 @@ fi
 if [[ $(find /config/etc/db -type f | wc -l) -eq 0 || ! -f "/config/etc/as.conf" || (-f "/config/etc/as.conf" && $(grep "vpn.server.user=openvpn_as" /config/etc/as.conf)) ]]; then
 # shellcheck disable=SC2059
 printf  "${CONFINPUT}" | /usr/local/openvpn_as/bin/ovpn-init
+echo "Stopping openvpn-as now; will start again later after configuring"
+kill `cat /var/run/openvpnas.pid`
 fi
 
 chown -R abc:abc \

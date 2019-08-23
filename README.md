@@ -205,6 +205,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **22.08.19:** - Prevent auto-start of openvpn after first time install, before configuration is completed.
 * **25.07.19:** - Create a xenial branch/tag and rebase master/latest to bionic.
 * **07.04.19:** - Fix first time config.
 * **03.04.19:** - Big rewrite of the install and update logic of openvpn-as to fix breaking changes (should fix updating from 2.6.1 to 2.7.3), added mysql-client for cluster support.
