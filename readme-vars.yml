@@ -63,6 +63,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "27.08.19:", desc: "Add new clients package to install and upgrade process." }
   - { date: "22.08.19:", desc: "Prevent auto-start of openvpn after first time install, before configuration is completed." }
   - { date: "25.07.19:", desc: "Create a xenial branch/tag and rebase master/latest to bionic." }
   - { date: "07.04.19:", desc: "Fix first time config." }
