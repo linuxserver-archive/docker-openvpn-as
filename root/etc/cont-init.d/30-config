@@ -15,6 +15,7 @@ if [ -f /openvpn/openvpn.deb ]; then
 	ln -s /config /usr/local/openvpn_as
 	if [ ! -f /config/etc/as.conf ]; then
 		echo "installing openvpn-as for the first time"
+		dpkg -i /openvpn/openvpn-clients.deb
 		dpkg -i /openvpn/openvpn.deb
 		rm /openvpn/openvpn.deb
 		sed -i \
@@ -36,6 +37,7 @@ if [ -f /openvpn/openvpn.deb ]; then
 		cp /config/etc/as.conf /config/backup/as.conf
 		cd /config || exit
 		rm -rf !("backup"|"log")
+		dpkg -i /openvpn/openvpn-clients.deb
 		dpkg -i /openvpn/openvpn.deb
 		rm /openvpn/openvpn.deb
 		sed -i \
