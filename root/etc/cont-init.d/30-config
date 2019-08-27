@@ -49,18 +49,6 @@ if [ -f /openvpn/openvpn.deb ]; then
 			-e 's#~/tmp#/openvpn/tmp#g' \
 			-e 's#~/sock#/openvpn/sock#g' \
 			/usr/local/openvpn_as/etc/as_templ.conf
-		cd /config/backup || exit
-		DBFILERES="*.db"
-		for f in $DBFILERES
-		do
-			echo "restoring $f"
-			rm -f /config/etc/db/"$f"
-			sqlite3 </config/backup/"$f" /config/etc/db/"$f"
-		done
-		rm -f /config/etc/as.conf
-		echo "restoring as.conf"
-		cp /config/backup/as.conf /config/etc/as.conf
-		rm -rf /config/backup
 	fi
 fi
 shopt -u extglob
