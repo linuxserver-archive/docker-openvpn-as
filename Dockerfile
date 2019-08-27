@@ -29,6 +29,9 @@ RUN \
  curl -o \
  /openvpn/openvpn.deb -L \
 	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu18.amd_64.deb" && \
+ curl -o \
+ /openvpn/openvpn-clients.deb -L \
+        "https://openvpn.net/downloads/openvpn-as-bundled-clients-latest.deb" && \
  echo "**** ensure home folder for abc user set to /config ****" && \
  usermod -d /config abc && \
  echo "**** create admin user and set default password for it ****" && \
