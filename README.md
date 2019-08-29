@@ -137,7 +137,8 @@ The "admin" account is a system (PAM) account and after container update or recr
 1) Create another user and set as an admin,
 2) Log in as the new user,
 3) Delete the "admin" user in the gui,
-4) Modify the `as.conf` file under config/etc and replace the line `boot_pam_users.0=admin` with `#boot_pam_users.0=admin` (this only has to be done once and will survive container recreation)
+4) Modify the `as.conf` file under config/etc and replace the line `boot_pam_users.0=admin` with ~~`#boot_pam_users.0=admin`~~ `boot_pam_users.0=kjhvkhv` (this only has to be done once and will survive container recreation)  
+* IMPORTANT NOTE: Commenting out the first pam user in as.conf creates issues in 2.7.5. To make it work while still blocking pam user access, uncomment that line and change admin to a random nonexistent user as described above.
 
 
 
@@ -205,6 +206,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **29.08.19:** - Update Application Setup instructions in readme to fix 2.7.5 login issue for existing users.
 * **27.08.19:** - Add new clients package to install and upgrade process.
 * **22.08.19:** - Prevent auto-start of openvpn after first time install, before configuration is completed.
 * **25.07.19:** - Create a xenial branch/tag and rebase master/latest to bionic.

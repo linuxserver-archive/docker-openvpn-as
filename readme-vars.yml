@@ -59,10 +59,12 @@ app_setup_block: |
   1) Create another user and set as an admin,
   2) Log in as the new user,
   3) Delete the "admin" user in the gui,
-  4) Modify the `as.conf` file under config/etc and replace the line `boot_pam_users.0=admin` with `#boot_pam_users.0=admin` (this only has to be done once and will survive container recreation)
+  4) Modify the `as.conf` file under config/etc and replace the line `boot_pam_users.0=admin` with ~~`#boot_pam_users.0=admin`~~ `boot_pam_users.0=kjhvkhv` (this only has to be done once and will survive container recreation)  
+  * IMPORTANT NOTE: Commenting out the first pam user in as.conf creates issues in 2.7.5. To make it work while still blocking pam user access, uncomment that line and change admin to a random nonexistent user as described above.
 
 # changelog
 changelogs:
+  - { date: "29.08.19:", desc: "Update Application Setup instructions in readme to fix 2.7.5 login issue for existing users." }
   - { date: "27.08.19:", desc: "Add new clients package to install and upgrade process." }
   - { date: "22.08.19:", desc: "Prevent auto-start of openvpn after first time install, before configuration is completed." }
   - { date: "25.07.19:", desc: "Create a xenial branch/tag and rebase master/latest to bionic." }
