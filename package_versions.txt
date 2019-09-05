@@ -72,7 +72,7 @@ libkmod222-1ubuntu5.2
 libkrb5-26-heimdal1.7~git20150920+dfsg-4ubuntu1.16.04.1
 libkrb5-31.13.2+dfsg-5ubuntu2.1
 libkrb5support01.13.2+dfsg-5ubuntu2.1
-libldap-2.4-22.4.42+dfsg-2ubuntu3.6
+libldap-2.4-22.4.42+dfsg-2ubuntu3.7
 liblz4-10.0~r131-2ubuntu2
 liblzma55.1.1alpha+20120614-2ubuntu2
 libmount12.27.1-6ubuntu3.7
@@ -115,7 +115,7 @@ libustr-1.0-11.0.4-5
 libuuid12.27.1-6ubuntu3.7
 libwind0-heimdal1.7~git20150920+dfsg-4ubuntu1.16.04.1
 libxtables111.6.0-2ubuntu3
-linux-libc-dev4.4.0-159.187
+linux-libc-dev4.4.0-161.189
 locales2.23-0ubuntu11
 login1:4.2-3.1ubuntu5.4
 lsb-base9.20160110ubuntu0.2
