@@ -76,8 +76,8 @@ libldap-2.4-22.4.42+dfsg-2ubuntu3.7
 liblz4-10.0~r131-2ubuntu2
 liblzma55.1.1alpha+20120614-2ubuntu2
 libmount12.27.1-6ubuntu3.9
-libmysqlclient205.7.27-0ubuntu0.16.04.1
-libmysqlclient-dev5.7.27-0ubuntu0.16.04.1
+libmysqlclient205.7.28-0ubuntu0.16.04.2
+libmysqlclient-dev5.7.28-0ubuntu0.16.04.2
 libncurses56.0+20160213-1ubuntu1
 libncursesw56.0+20160213-1ubuntu1
 libnettle63.2-1ubuntu0.16.04.1
@@ -125,7 +125,7 @@ manpages-dev4.04-2
 mawk1.3.3-17ubuntu2
 mount2.27.1-6ubuntu3.9
 multiarch-support2.23-0ubuntu11
-mysql-common5.7.27-0ubuntu0.16.04.1
+mysql-common5.7.28-0ubuntu0.16.04.2
 ncurses-base6.0+20160213-1ubuntu1
 ncurses-bin6.0+20160213-1ubuntu1
 net-tools1.60-26ubuntu1
