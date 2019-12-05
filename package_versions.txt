@@ -102,7 +102,7 @@ libsemanage12.3-1build3
 libsemanage-common2.3-1build3
 libsepol12.4-2
 libsmartcols12.27.1-6ubuntu3.9
-libsqlite3-03.11.0-1ubuntu1.2
+libsqlite3-03.11.0-1ubuntu1.3
 libss21.42.13-1ubuntu1.1
 libssl1.0.01.0.2g-1ubuntu4.15
 libstdc++65.4.0-6ubuntu1~16.04.12
@@ -115,7 +115,7 @@ libustr-1.0-11.0.4-5
 libuuid12.27.1-6ubuntu3.9
 libwind0-heimdal1.7~git20150920+dfsg-4ubuntu1.16.04.1
 libxtables111.6.0-2ubuntu3
-linux-libc-dev4.4.0-169.198
+linux-libc-dev4.4.0-170.199
 locales2.23-0ubuntu11
 login1:4.2-3.1ubuntu5.4
 lsb-base9.20160110ubuntu0.2
@@ -137,7 +137,7 @@ readline-common6.3-8ubuntu2
 rsync3.1.1-3ubuntu1.2
 sed4.2.2-7
 sensible-utils0.0.9ubuntu0.16.04.1
-sqlite33.11.0-1ubuntu1.2
+sqlite33.11.0-1ubuntu1.3
 systemd229-4ubuntu21.22
 systemd-sysv229-4ubuntu21.22
 sysvinit-utils2.88dsf-59.3ubuntu2
