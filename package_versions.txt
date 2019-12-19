@@ -106,10 +106,10 @@ libsqlite3-03.11.0-1ubuntu1.3
 libss21.42.13-1ubuntu1.1
 libssl1.0.01.0.2g-1ubuntu4.15
 libstdc++65.4.0-6ubuntu1~16.04.12
-libsystemd0229-4ubuntu21.22
+libsystemd0229-4ubuntu21.23
 libtasn1-64.7-3ubuntu0.16.04.3
 libtinfo56.0+20160213-1ubuntu1
-libudev1229-4ubuntu21.22
+libudev1229-4ubuntu21.23
 libusb-0.1-42:0.1.12-28
 libustr-1.0-11.0.4-5
 libuuid12.27.1-6ubuntu3.9
@@ -138,8 +138,8 @@ rsync3.1.1-3ubuntu1.2
 sed4.2.2-7
 sensible-utils0.0.9ubuntu0.16.04.1
 sqlite33.11.0-1ubuntu1.3
-systemd229-4ubuntu21.22
-systemd-sysv229-4ubuntu21.22
+systemd229-4ubuntu21.23
+systemd-sysv229-4ubuntu21.23
 sysvinit-utils2.88dsf-59.3ubuntu2
 sysv-rc2.88dsf-59.3ubuntu2
 tar1.28-2.1ubuntu0.1
