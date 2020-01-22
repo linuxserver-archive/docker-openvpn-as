@@ -155,7 +155,7 @@ In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as bel
 &nbsp;
 ## Application Setup
 
-The admin interface is available at `https://<ip>:943/admin` with a default user/password of admin/password
+The admin interface is available at `https://DOCKER-HOST-IP:943/admin` (assuming bridge mode) with a default user/password of admin/password
 
 During first login, make sure that the "Authentication" in the webui is set to "Local" instead of "PAM". Then set up the user accounts with their passwords (user accounts created under PAM do not survive container update or recreation).
 
