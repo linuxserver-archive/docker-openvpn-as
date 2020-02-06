@@ -5,7 +5,7 @@ ARG BUILD_DATE
 ARG VERSION
 ARG OPENVPNAS_VERSION 
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="sparklyballs"
+LABEL maintainer="aptalca"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
@@ -14,11 +14,20 @@ RUN \
  echo "**** install packages ****" && \
  apt-get update && \
  apt-get install -y \
+	bridge-utils \
+	iproute2 \
 	iptables \
+	liblzo2-2 \
 	libmysqlclient-dev \
 	net-tools \
+	python \
+	python-mysqldb \
+	python-pkg-resources \
+	python-pyrad \
+	python-serial \
 	rsync \
-	sqlite3 && \
+	sqlite3 \
+	ucarp && \
  echo "**** download openvpn-as ****" && \
  if [ -z ${OPENVPNAS_VERSION+x} ]; then \
 	OPENVPNAS_VERSION=$(curl -w "%{url_effective}" -ILsS -o /dev/null \
@@ -28,7 +37,7 @@ RUN \
  mkdir /openvpn && \
  curl -o \
  /openvpn/openvpn.deb -L \
-	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu16.amd_64.deb" && \
+	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu16.amd64.deb" && \
  curl -o \
  /openvpn/openvpn-clients.deb -L \
 	"https://openvpn.net/downloads/openvpn-as-bundled-clients-latest.deb" && \
