@@ -17,6 +17,7 @@ RUN \
 	iptables \
 	libmysqlclient-dev \
 	net-tools \
+	python \
 	rsync \
 	sqlite3 && \
  echo "**** download openvpn-as ****" && \
@@ -28,7 +29,7 @@ RUN \
  mkdir /openvpn && \
  curl -o \
  /openvpn/openvpn.deb -L \
-	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu18.amd_64.deb" && \
+	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu18.amd64.deb" && \
  curl -o \
  /openvpn/openvpn-clients.deb -L \
         "https://openvpn.net/downloads/openvpn-as-bundled-clients-latest.deb" && \
