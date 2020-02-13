@@ -5,7 +5,7 @@ base-files9.4ubuntu4.11
 base-passwd3.5.39
 bash4.3-14ubuntu1.4
 bridge-utils1.5-9ubuntu1
-bsdutils1:2.27.1-6ubuntu3.9
+bsdutils1:2.27.1-6ubuntu3.10
 ca-certificates20170717~16.04.2
 coreutils8.25-2ubuntu3~16.04
 curl7.47.0-1ubuntu2.14
@@ -45,7 +45,7 @@ libatm11:2.5.1-1.5
 libattr11:2.4.47-2
 libaudit11:2.4.5-1ubuntu2.1
 libaudit-common1:2.4.5-1ubuntu2.1
-libblkid12.27.1-6ubuntu3.9
+libblkid12.27.1-6ubuntu3.10
 libbz2-1.01.0.6-8ubuntu0.2
 libc62.23-0ubuntu11
 libc6-dev2.23-0ubuntu11
@@ -61,7 +61,7 @@ libdebconfclient00.198ubuntu1
 libdevmapper1.02.12:1.02.110-1ubuntu10
 libdns-export1621:9.10.3.dfsg.P4-8ubuntu1.15
 libexpat12.1.0-7ubuntu0.16.04.5
-libfdisk12.27.1-6ubuntu3.9
+libfdisk12.27.1-6ubuntu3.10
 libffi63.2.1-4
 libgcc11:6.0.1-0ubuntu1
 libgcrypt201.6.5-2ubuntu0.6
@@ -89,7 +89,7 @@ liblzma55.1.1alpha+20120614-2ubuntu2
 liblzo2-22.08-1.2
 libmagic11:5.25-2ubuntu1.3
 libmnl01.0.3-5
-libmount12.27.1-6ubuntu3.9
+libmount12.27.1-6ubuntu3.10
 libmysqlclient205.7.29-0ubuntu0.16.04.1
 libmysqlclient-dev5.7.29-0ubuntu0.16.04.1
 libncurses56.0+20160213-1ubuntu1
@@ -119,7 +119,7 @@ libselinux12.4-3build2
 libsemanage12.3-1build3
 libsemanage-common2.3-1build3
 libsepol12.4-2
-libsmartcols12.27.1-6ubuntu3.9
+libsmartcols12.27.1-6ubuntu3.10
 libsqlite3-03.11.0-1ubuntu1.3
 libss21.42.13-1ubuntu1.2
 libssl1.0.01.0.2g-1ubuntu4.15
@@ -132,7 +132,7 @@ libtinfo56.0+20160213-1ubuntu1
 libudev1229-4ubuntu21.23
 libusb-0.1-42:0.1.12-28
 libustr-1.0-11.0.4-5
-libuuid12.27.1-6ubuntu3.9
+libuuid12.27.1-6ubuntu3.10
 libwind0-heimdal1.7~git20150920+dfsg-4ubuntu1.16.04.1
 libxtables111.6.0-2ubuntu3
 linux-libc-dev4.4.0-173.203
@@ -144,7 +144,7 @@ manpages4.04-2
 manpages-dev4.04-2
 mawk1.3.3-17ubuntu2
 mime-support3.59ubuntu1
-mount2.27.1-6ubuntu3.9
+mount2.27.1-6ubuntu3.10
 multiarch-support2.23-0ubuntu11
 mysql-common5.7.29-0ubuntu0.16.04.1
 ncurses-base6.0+20160213-1ubuntu1
@@ -176,6 +176,6 @@ tar1.28-2.1ubuntu0.1
 tzdata2019c-0ubuntu0.16.04
 ubuntu-keyring2012.05.19
 ucarp1.5.2-2
-util-linux2.27.1-6ubuntu3.9
+util-linux2.27.1-6ubuntu3.10
 zlib1g1:1.2.8.dfsg-2ubuntu4.3
 zlib1g-dev1:1.2.8.dfsg-2ubuntu4.3
