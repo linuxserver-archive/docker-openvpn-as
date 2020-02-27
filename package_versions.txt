@@ -164,7 +164,7 @@ python-pyrad2.0-3
 python-serial3.0.1-1
 python-six1.10.0-3
 readline-common6.3-8ubuntu2
-rsync3.1.1-3ubuntu1.2
+rsync3.1.1-3ubuntu1.3
 sed4.2.2-7
 sensible-utils0.0.9ubuntu0.16.04.1
 sqlite33.11.0-1ubuntu1.3
