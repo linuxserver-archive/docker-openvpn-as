@@ -166,6 +166,8 @@ The "admin" account is a system (PAM) account and after container update or recr
 4) Modify the `as.conf` file under config/etc and replace the line `boot_pam_users.0=admin` with ~~`#boot_pam_users.0=admin`~~ `boot_pam_users.0=kjhvkhv` (this only has to be done once and will survive container recreation)  
 * IMPORTANT NOTE: Commenting out the first pam user in as.conf creates issues in 2.7.5. To make it work while still blocking pam user access, uncomment that line and change admin to a random nonexistent user as described above.
 
+To ensure your devices can connect to your VPN properly, goto Configuration -> Network Settings -> and change the "Hostname or IP Address" section to either your domain name or public ip address.
+
 
 
 ## Support Info
