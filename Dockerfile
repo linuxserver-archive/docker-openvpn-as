@@ -5,43 +5,25 @@ ARG BUILD_DATE
 ARG VERSION
 ARG OPENVPNAS_VERSION 
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="sparklyballs,aptalca"
+LABEL maintainer="aptalca"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 
 RUN \
- echo "**** install packages ****" && \
+ echo "**** install dependencies ****" && \
  apt-get update && \
  apt-get install -y \
-	bridge-utils \
-	iproute2 \
-	iptables \
-	liblzo2-2 \
-	libmariadbclient18 \
-	libmysqlclient-dev \
-	net-tools \
-	python \
-	python-mysqldb \
-	python-pkg-resources \
-	python-pyrad \
-	python-serial \
-	rsync \
-	sqlite3 \
-	ucarp && \
- echo "**** download openvpn-as ****" && \
+	gnupg \
+	net-tools && \
+ echo "**** add openvpn-as repo ****" && \
+ curl -s https://as-repository.openvpn.net/as-repo-public.gpg | apt-key add - && \
+ echo "deb http://as-repository.openvpn.net/as/debian bionic main">/etc/apt/sources.list.d/openvpn-as-repo.list && \
  if [ -z ${OPENVPNAS_VERSION+x} ]; then \
-	OPENVPNAS_VERSION=$(curl -w "%{url_effective}" -ILsS -o /dev/null \
-	https://openvpn.net/downloads/openvpn-as-latest-ubuntu18.amd_64.deb \
-	| awk -F '(openvpn-as-|-Ubuntu18)' '{print $2}'); \
+	OPENVPNAS_VERSION=$(curl -sX GET http://as-repository.openvpn.net/as/debian/dists/bionic/main/binary-amd64/Packages.gz | gunzip -c \
+	|grep -A 7 -m 1 "Package: openvpn-as" | awk -F ": " '/Version/{print $2;exit}');\
  fi && \
- mkdir /openvpn && \
- curl -o \
- /openvpn/openvpn.deb -L \
-	"https://swupdate.openvpn.org/as/openvpn-as-${OPENVPNAS_VERSION}-Ubuntu18.amd64.deb" && \
- curl -o \
- /openvpn/openvpn-clients.deb -L \
-        "https://openvpn.net/downloads/openvpn-as-bundled-clients-latest.deb" && \
+ echo "$OPENVPNAS_VERSION" > /version.txt && \
  echo "**** ensure home folder for abc user set to /config ****" && \
  usermod -d /config abc && \
  echo "**** create admin user and set default password for it ****" && \
