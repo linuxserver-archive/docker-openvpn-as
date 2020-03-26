@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-# make folders
+# make folders
 mkdir -p /openvpn{/pid,/sock,/tmp} /dev/net /config/log /config/etc/tmp
 
 # create tun device
@@ -9,15 +9,19 @@ if [ ! -c /dev/net/tun ]; then
 fi
 
 shopt -s extglob
-# install or update openvpn-as
-if [ -f /openvpn/openvpn.deb ]; then
+# install or update openvpn-as
+if [ -f /version.txt ]; then
+	OPENVPNAS_VERSION=$(cat /version.txt)
 	rm -rf /usr/local/openvpn_as
 	ln -s /config /usr/local/openvpn_as
 	if [ ! -f /config/etc/as.conf ]; then
 		echo "installing openvpn-as for the first time"
-		dpkg -i /openvpn/openvpn-clients.deb
-		dpkg -i /openvpn/openvpn.deb
-		rm /openvpn/openvpn.deb
+		apt-get update && \
+		apt-get install -y \
+			openvpn-as=$OPENVPNAS_VERSION
+		echo "Stopping openvpn-as now; will start again later after configuring"
+		kill `cat /var/run/openvpnas.pid`
+		rm /version.txt
 		sed -i \
 			-e 's#=openvpn_as#=abc#g' \
 			-e 's#~/tmp#/openvpn/tmp#g' \
@@ -37,9 +41,12 @@ if [ -f /openvpn/openvpn.deb ]; then
 		cp /config/etc/as.conf /config/backup/as.conf
 		cd /config || exit
 		rm -rf !("backup"|"log")
-		dpkg -i /openvpn/openvpn-clients.deb
-		dpkg -i /openvpn/openvpn.deb
-		rm /openvpn/openvpn.deb
+		apt-get update && \
+		apt-get install -y \
+			openvpn-as=$OPENVPNAS_VERSION
+		echo "Stopping openvpn-as now; will start again later after configuring"
+		kill `cat /var/run/openvpnas.pid`
+		rm /version.txt
 		sed -i \
 			-e 's#=openvpn_as#=abc#g' \
 			-e 's#~/tmp#/openvpn/tmp#g' \
@@ -61,7 +68,7 @@ if [ -f /openvpn/openvpn.deb ]; then
 fi
 shopt -u extglob
 
-# clear old sock files
+# clear old sock files
 for file in /openvpn/sock/*
 	do
 		if [ -e "$file" ]; then
@@ -69,7 +76,7 @@ for file in /openvpn/sock/*
 		fi
 	done
 
-# clear old pid files
+# clear old pid files
 for file in /openvpn/pid/*
 	do
 		if [ -e "$file" ]; then
@@ -78,6 +85,6 @@ for file in /openvpn/pid/*
 	done
 
 
-# permissions
+# permissions
 chown abc:abc /config/log /config/etc/tmp
 chmod -R 755 /openvpn

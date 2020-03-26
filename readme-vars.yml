@@ -63,6 +63,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "26.03.20:", desc: "Switch to using the openvpn-as repo for packages." }
   - { date: "27.08.19:", desc: "Add new clients package to install and upgrade process." }
   - { date: "25.07.19:", desc: "Create a xenial branch and rebase master to bionic." }
   - { date: "07.04.19:", desc: "Fix first time config." }

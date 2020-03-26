@@ -231,6 +231,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **26.03.20:** - Switch to using the openvpn-as repo for packages.
 * **27.08.19:** - Add new clients package to install and upgrade process.
 * **25.07.19:** - Create a xenial branch and rebase master to bionic.
 * **07.04.19:** - Fix first time config.
