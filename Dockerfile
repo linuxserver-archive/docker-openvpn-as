@@ -15,7 +15,8 @@ RUN \
  apt-get update && \
  apt-get install -y \
 	gnupg \
-	net-tools && \
+	net-tools \
+	sqlite3 && \
  echo "**** add openvpn-as repo ****" && \
  curl -s https://as-repository.openvpn.net/as-repo-public.gpg | apt-key add - && \
  echo "deb http://as-repository.openvpn.net/as/debian bionic main">/etc/apt/sources.list.d/openvpn-as-repo.list && \
