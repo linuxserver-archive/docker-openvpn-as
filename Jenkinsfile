@@ -103,7 +103,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' curl -w '%{url_effective}' -ILsS https://openvpn.net/downloads/openvpn-as-latest-ubuntu18.amd_64.deb -o /dev/null | awk -F '(openvpn-as-|-Ubuntu18)' '{print $2}' ''',
+            script: ''' curl -sX GET http://as-repository.openvpn.net/as/debian/dists/bionic/main/binary-amd64/Packages.gz | gunzip -c |grep -A 7 -m 1 'Package: openvpn-as' | awk -F ': ' '/Version/{print $2;exit}' ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'
         }
