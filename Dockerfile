@@ -14,9 +14,22 @@ RUN \
  echo "**** install dependencies ****" && \
  apt-get update && \
  apt-get install -y \
+	bridge-utils \
 	gnupg \
+	iproute2 \
+	iptables \
+	liblzo2-2 \
+	libmariadbclient18 \
+	libmysqlclient-dev \
 	net-tools \
-	sqlite3 && \
+	python \
+	python-mysqldb \
+	python-pkg-resources \
+	python-pyrad \
+	python-serial \
+	rsync \
+	sqlite3 \
+	ucarp && \
  echo "**** add openvpn-as repo ****" && \
  curl -s https://as-repository.openvpn.net/as-repo-public.gpg | apt-key add - && \
  echo "deb http://as-repository.openvpn.net/as/debian bionic main">/etc/apt/sources.list.d/openvpn-as-repo.list && \
