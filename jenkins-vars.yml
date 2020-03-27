@@ -3,7 +3,7 @@
 # jenkins variables
 project_name: docker-openvpn-as
 external_type: na
-custom_version_command: "curl -w '%{url_effective}' -ILsS https://openvpn.net/downloads/openvpn-as-latest-ubuntu16.amd_64.deb -o /dev/null | awk -F '(openvpn-as-|-Ubuntu16)' '{print $2}'"
+custom_version_command: "curl -sX GET http://as-repository.openvpn.net/as/debian/dists/xenial/main/binary-amd64/Packages.gz | gunzip -c |grep -A 7 -m 1 'Package: openvpn-as' | awk -F ': ' '/Version/{print $2;exit}'"
 release_type: prerelease
 release_tag: xenial
 ls_branch: xenial
