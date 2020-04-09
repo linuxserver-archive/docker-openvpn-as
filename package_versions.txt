@@ -20,7 +20,7 @@ e2fsprogs1.44.1-1ubuntu1.3
 fdisk2.31.1-0.4ubuntu3.6
 file1:5.32-2ubuntu0.3
 findutils4.6.0+git+20170828-2
-gcc-8-base8.3.0-26ubuntu1~18.04
+gcc-8-base8.4.0-1ubuntu1~18.04
 gnupg2.2.4-1ubuntu1.2
 gnupg-l10n2.2.4-1ubuntu1.2
 gnupg-utils2.2.4-1ubuntu1.2
@@ -67,7 +67,7 @@ libexpat12.2.5-3ubuntu0.2
 libext2fs21.44.1-1ubuntu1.3
 libfdisk12.31.1-0.4ubuntu3.6
 libffi63.2.1-8
-libgcc11:8.3.0-26ubuntu1~18.04
+libgcc11:8.4.0-1ubuntu1~18.04
 libgcrypt201.8.1-4ubuntu1.2
 libgmp102:6.1.2+dfsg-2
 libgnutls303.5.18-1ubuntu1.3
@@ -138,7 +138,7 @@ libsqlite3-03.22.0-1ubuntu0.3
 libss21.44.1-1ubuntu1.3
 libssl1.11.1.1-1ubuntu2.1~18.04.5
 libssl-dev1.1.1-1ubuntu2.1~18.04.5
-libstdc++68.3.0-26ubuntu1~18.04
+libstdc++68.4.0-1ubuntu1~18.04
 libsystemd0237-3ubuntu10.39
 libtasn1-64.13-2
 libtinfo56.1-1ubuntu1.18.04
@@ -148,7 +148,7 @@ libuuid12.31.1-0.4ubuntu3.6
 libwind0-heimdal7.5.0+dfsg-1
 libxtables121.6.1-2ubuntu2
 libzstd11.3.3+dfsg-2ubuntu1.1
-linux-libc-dev4.15.0-91.92
+linux-libc-dev4.15.0-96.97
 locales2.27-3ubuntu1
 login1:4.5-1ubuntu2
 lsb-base9.20170808ubuntu1
