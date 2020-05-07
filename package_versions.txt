@@ -100,8 +100,8 @@ libmagic-mgc1:5.32-2ubuntu0.3
 libmariadbclient181:10.1.44-0ubuntu0.18.04.1
 libmnl01.0.4-2
 libmount12.31.1-0.4ubuntu3.6
-libmysqlclient205.7.29-0ubuntu0.18.04.1
-libmysqlclient-dev5.7.29-0ubuntu0.18.04.1
+libmysqlclient205.7.30-0ubuntu0.18.04.1
+libmysqlclient-dev5.7.30-0ubuntu0.18.04.1
 libncurses56.1-1ubuntu1.18.04
 libncursesw56.1-1ubuntu1.18.04
 libnetfilter-conntrack31.0.6-2
