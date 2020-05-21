@@ -1,6 +1,6 @@
 adduser3.116ubuntu1
-apt1.6.12
-apt-utils1.6.12
+apt1.6.12ubuntu0.1
+apt-utils1.6.12ubuntu0.1
 base-files10.1ubuntu2.8
 base-passwd3.5.44
 bash4.4.18-2ubuntu1.2
@@ -42,8 +42,8 @@ isc-dhcp-client4.3.5-3ubuntu7.1
 isc-dhcp-common4.3.5-3ubuntu7.1
 krb5-locales1.16-2ubuntu0.1
 libacl12.2.52-3build1
-libapt-inst2.01.6.12
-libapt-pkg5.01.6.12
+libapt-inst2.01.6.12ubuntu0.1
+libapt-pkg5.01.6.12ubuntu0.1
 libasn1-8-heimdal7.5.0+dfsg-1
 libassuan02.5.1-2
 libatm11:2.5.1-2build1
@@ -61,7 +61,7 @@ libcom-err21.44.1-1ubuntu1.3
 libcurl47.58.0-2ubuntu3.8
 libdb5.35.3.28-13.1ubuntu1.1
 libdebconfclient00.213ubuntu1
-libdns-export11001:9.11.3+dfsg-1ubuntu1.11
+libdns-export11001:9.11.3+dfsg-1ubuntu1.12
 libelf10.170-0.4ubuntu0.1
 libexpat12.2.5-3ubuntu0.2
 libext2fs21.44.1-1ubuntu1.3
@@ -83,7 +83,7 @@ libidn2-02.0.4-1.1ubuntu0.2
 libip4tc01.6.1-2ubuntu2
 libip6tc01.6.1-2ubuntu2
 libiptc01.6.1-2ubuntu2
-libisc-export1691:9.11.3+dfsg-1ubuntu1.11
+libisc-export1691:9.11.3+dfsg-1ubuntu1.12
 libk5crypto31.16-2ubuntu0.1
 libkeyutils11.5.9-9.2ubuntu2
 libkrb5-26-heimdal7.5.0+dfsg-1
@@ -148,7 +148,7 @@ libuuid12.31.1-0.4ubuntu3.6
 libwind0-heimdal7.5.0+dfsg-1
 libxtables121.6.1-2ubuntu2
 libzstd11.3.3+dfsg-2ubuntu1.1
-linux-libc-dev4.15.0-99.100
+linux-libc-dev4.15.0-101.102
 locales2.27-3ubuntu1
 login1:4.5-1ubuntu2
 lsb-base9.20170808ubuntu1
@@ -184,7 +184,7 @@ sensible-utils0.0.12
 sqlite33.22.0-1ubuntu0.3
 sysvinit-utils2.88dsf-59.10ubuntu1
 tar1.29b-2ubuntu0.1
-tzdata2019c-0ubuntu0.18.04
+tzdata2020a-0ubuntu0.18.04
 ubuntu-keyring2018.09.18.1~18.04.0
 ucarp1.5.2-2.1
 util-linux2.31.1-0.4ubuntu3.6
