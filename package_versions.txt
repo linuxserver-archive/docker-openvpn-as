@@ -7,7 +7,7 @@ bash4.4.18-2ubuntu1.2
 bridge-utils1.5-15ubuntu1
 bsdutils1:2.31.1-0.4ubuntu3.6
 bzip21.0.6-8.1ubuntu0.2
-ca-certificates20180409
+ca-certificates20190110~18.04.1
 coreutils8.28-1ubuntu1
 curl7.58.0-2ubuntu3.8
 dash0.5.8-2.10
@@ -136,8 +136,8 @@ libsepol12.7-1
 libsmartcols12.31.1-0.4ubuntu3.6
 libsqlite3-03.22.0-1ubuntu0.3
 libss21.44.1-1ubuntu1.3
-libssl1.11.1.1-1ubuntu2.1~18.04.5
-libssl-dev1.1.1-1ubuntu2.1~18.04.5
+libssl1.11.1.1-1ubuntu2.1~18.04.6
+libssl-dev1.1.1-1ubuntu2.1~18.04.6
 libstdc++68.4.0-1ubuntu1~18.04
 libsystemd0237-3ubuntu10.41
 libtasn1-64.13-2
@@ -162,7 +162,7 @@ mysql-common5.8+1.0.4
 ncurses-base6.1-1ubuntu1.18.04
 ncurses-bin6.1-1ubuntu1.18.04
 net-tools1.60+git20161116.90da8a0-1ubuntu1
-openssl1.1.1-1ubuntu2.1~18.04.5
+openssl1.1.1-1ubuntu2.1~18.04.6
 passwd1:4.5-1ubuntu2
 perl-base5.26.1-6ubuntu0.3
 pinentry-curses1.1.0-1
