@@ -40,7 +40,7 @@ if [ -f /version.txt ]; then
 		echo "backing up as.conf"
 		cp /config/etc/as.conf /config/backup/as.conf
 		cd /config || exit
-		rm -rf !("backup"|"log")
+		rm -rf !("backup"|"log"|"custom-cont-init.d"|"custom-services.d")
 		apt-get update && \
 		apt-get install -y \
 			openvpn-as=$OPENVPNAS_VERSION
