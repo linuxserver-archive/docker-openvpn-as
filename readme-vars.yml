@@ -66,6 +66,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "22.06.20:", desc: "Added Support for persistent Customization Folders." }
   - { date: "26.03.20:", desc: "Switch to using the openvpn-as repo for packages." }
   - { date: "29.08.19:", desc: "Update Application Setup instructions in readme to fix 2.7.5 login issue for existing users." }
   - { date: "27.08.19:", desc: "Add new clients package to install and upgrade process." }
