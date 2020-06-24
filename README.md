@@ -243,6 +243,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **22.06.20:** - Added Support for persistent Customization Folders.
 * **26.03.20:** - Switch to using the openvpn-as repo for packages.
 * **29.08.19:** - Update Application Setup instructions in readme to fix 2.7.5 login issue for existing users.
 * **27.08.19:** - Add new clients package to install and upgrade process.
