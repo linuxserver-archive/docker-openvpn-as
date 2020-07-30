@@ -100,8 +100,8 @@ libmagic-mgc1:5.32-2ubuntu0.4
 libmariadbclient181:10.1.44-0ubuntu0.18.04.1
 libmnl01.0.4-2
 libmount12.31.1-0.4ubuntu3.6
-libmysqlclient205.7.30-0ubuntu0.18.04.1
-libmysqlclient-dev5.7.30-0ubuntu0.18.04.1
+libmysqlclient205.7.31-0ubuntu0.18.04.1
+libmysqlclient-dev5.7.31-0ubuntu0.18.04.1
 libncurses56.1-1ubuntu1.18.04
 libncursesw56.1-1ubuntu1.18.04
 libnetfilter-conntrack31.0.6-2
@@ -128,7 +128,7 @@ librtmp12.4+20151223.gitfa8646d.1-1
 libsasl2-22.1.27~101-g0780600+dfsg-3ubuntu2.1
 libsasl2-modules2.1.27~101-g0780600+dfsg-3ubuntu2.1
 libsasl2-modules-db2.1.27~101-g0780600+dfsg-3ubuntu2.1
-libseccomp22.4.3-1ubuntu3.18.04.2
+libseccomp22.4.3-1ubuntu3.18.04.3
 libselinux12.7-2build2
 libsemanage12.7-2build2
 libsemanage-common2.7-2build2
