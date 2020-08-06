@@ -36,7 +36,7 @@ gzip1.6-5ubuntu1
 hostname3.20
 ifupdown0.8.17ubuntu1.1
 init-system-helpers1.51
-iproute24.15.0-2ubuntu1.1
+iproute24.15.0-2ubuntu1.2
 iptables1.6.1-2ubuntu2
 isc-dhcp-client4.3.5-3ubuntu7.1
 isc-dhcp-common4.3.5-3ubuntu7.1
