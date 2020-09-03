@@ -114,7 +114,7 @@ libpam0g1.1.8-3.6ubuntu2.18.04.1
 libpam-modules1.1.8-3.6ubuntu2.18.04.1
 libpam-modules-bin1.1.8-3.6ubuntu2.18.04.1
 libpam-runtime1.1.8-3.6ubuntu2.18.04.1
-libpcap0.81.8.1-6ubuntu1.18.04.1
+libpcap0.81.8.1-6ubuntu1.18.04.2
 libpcre32:8.39-9
 libpopt01.16-11
 libprocps62:3.3.12-3ubuntu1.2
@@ -148,7 +148,7 @@ libuuid12.31.1-0.4ubuntu3.6
 libwind0-heimdal7.5.0+dfsg-1
 libxtables121.6.1-2ubuntu2
 libzstd11.3.3+dfsg-2ubuntu1.1
-linux-libc-dev4.15.0-112.113
+linux-libc-dev4.15.0-115.116
 locales2.27-3ubuntu1.2
 login1:4.5-1ubuntu2
 lsb-base9.20170808ubuntu1
