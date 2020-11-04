@@ -16,7 +16,7 @@ available_architectures:
 development_versions: true
 development_versions_items:
   - { tag: "latest", desc: "Stable releases based on ubuntu bionic" }
-  - { tag: "xenial", desc: "Stable releases based on ubuntu xenial" }
+  - { tag: "xenial", desc: "DEPRECATED, no longer updated - Stable releases based on ubuntu xenial" }
 
 # container parameters
 common_param_env_vars_enabled: true
@@ -66,6 +66,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "04.11.20:", desc: "`xenial` tag is deprecated and there will be no further releases for that tag." }
   - { date: "22.06.20:", desc: "Added Support for persistent Customization Folders." }
   - { date: "26.03.20:", desc: "Switch to using the openvpn-as repo for packages." }
   - { date: "29.08.19:", desc: "Update Application Setup instructions in readme to fix 2.7.5 login issue for existing users." }
