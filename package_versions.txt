@@ -36,7 +36,7 @@ gzip1.6-5ubuntu1
 hostname3.20
 ifupdown0.8.17ubuntu1.1
 init-system-helpers1.51
-iproute24.15.0-2ubuntu1.2
+iproute24.15.0-2ubuntu1.3
 iptables1.6.1-2ubuntu2
 isc-dhcp-client4.3.5-3ubuntu7.1
 isc-dhcp-common4.3.5-3ubuntu7.1
@@ -119,8 +119,8 @@ libpcre32:8.39-9
 libpopt01.16-11
 libprocps62:3.3.12-3ubuntu1.2
 libpsl50.19.1-5build1
-libpython2.7-minimal2.7.17-1~18.04ubuntu1.2
-libpython2.7-stdlib2.7.17-1~18.04ubuntu1.2
+libpython2.7-minimal2.7.17-1~18.04ubuntu1.5
+libpython2.7-stdlib2.7.17-1~18.04ubuntu1.5
 libpython-stdlib2.7.15~rc1-1
 libreadline77.0-3
 libroken18-heimdal7.5.0+dfsg-1
@@ -169,8 +169,8 @@ pinentry-curses1.1.0-1
 procps2:3.3.12-3ubuntu1.2
 publicsuffix20180223.1310-1
 python2.7.15~rc1-1
-python2.72.7.17-1~18.04ubuntu1.2
-python2.7-minimal2.7.17-1~18.04ubuntu1.2
+python2.72.7.17-1~18.04ubuntu1.5
+python2.7-minimal2.7.17-1~18.04ubuntu1.5
 python-minimal2.7.15~rc1-1
 python-mysqldb1.3.10-1build1
 python-pkg-resources39.0.1-2
