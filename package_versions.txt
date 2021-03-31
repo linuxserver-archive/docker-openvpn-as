@@ -136,8 +136,8 @@ libsepol12.7-1
 libsmartcols12.31.1-0.4ubuntu3.7
 libsqlite3-03.22.0-1ubuntu0.4
 libss21.44.1-1ubuntu1.3
-libssl1.11.1.1-1ubuntu2.1~18.04.8
-libssl-dev1.1.1-1ubuntu2.1~18.04.8
+libssl1.11.1.1-1ubuntu2.1~18.04.9
+libssl-dev1.1.1-1ubuntu2.1~18.04.9
 libstdc++68.4.0-1ubuntu1~18.04
 libsystemd0237-3ubuntu10.45
 libtasn1-64.13-2
@@ -148,7 +148,7 @@ libuuid12.31.1-0.4ubuntu3.7
 libwind0-heimdal7.5.0+dfsg-1
 libxtables121.6.1-2ubuntu2
 libzstd11.3.3+dfsg-2ubuntu1.2
-linux-libc-dev4.15.0-139.143
+linux-libc-dev4.15.0-140.144
 locales2.27-3ubuntu1.4
 login1:4.5-1ubuntu2
 lsb-base9.20170808ubuntu1
@@ -162,7 +162,7 @@ mysql-common5.8+1.0.4
 ncurses-base6.1-1ubuntu1.18.04
 ncurses-bin6.1-1ubuntu1.18.04
 net-tools1.60+git20161116.90da8a0-1ubuntu1
-openssl1.1.1-1ubuntu2.1~18.04.8
+openssl1.1.1-1ubuntu2.1~18.04.9
 passwd1:4.5-1ubuntu2
 perl-base5.26.1-6ubuntu0.5
 pinentry-curses1.1.0-1
