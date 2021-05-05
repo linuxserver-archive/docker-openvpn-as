@@ -61,7 +61,7 @@ libcom-err21.44.1-1ubuntu1.3
 libcurl47.58.0-2ubuntu3.13
 libdb5.35.3.28-13.1ubuntu1.1
 libdebconfclient00.213ubuntu1
-libdns-export11001:9.11.3+dfsg-1ubuntu1.14
+libdns-export11001:9.11.3+dfsg-1ubuntu1.15
 libelf10.170-0.4ubuntu0.1
 libexpat12.2.5-3ubuntu0.2
 libext2fs21.44.1-1ubuntu1.3
@@ -83,7 +83,7 @@ libidn2-02.0.4-1.1ubuntu0.2
 libip4tc01.6.1-2ubuntu2
 libip6tc01.6.1-2ubuntu2
 libiptc01.6.1-2ubuntu2
-libisc-export1691:9.11.3+dfsg-1ubuntu1.14
+libisc-export1691:9.11.3+dfsg-1ubuntu1.15
 libk5crypto31.16-2ubuntu0.2
 libkeyutils11.5.9-9.2ubuntu2
 libkrb5-26-heimdal7.5.0+dfsg-1
