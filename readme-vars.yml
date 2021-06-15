@@ -8,6 +8,11 @@ project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a full fea
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_blurb_optional_extras_enabled: false
 
+project_deprecation_status: true
+project_deprecation_message: |
+  We recommend our wireguard image instead for vpn:
+  https://github.com/linuxserver/docker-wireguard
+
 # supported architectures
 available_architectures:
   - { arch: "{{ arch_x86_64 }}", tag: "latest"}
@@ -15,7 +20,7 @@ available_architectures:
 # development version
 development_versions: true
 development_versions_items:
-  - { tag: "latest", desc: "Stable releases based on ubuntu bionic" }
+  - { tag: "latest", desc: "DEPRECATED, no longer updated - Stable releases based on ubuntu bionic" }
   - { tag: "xenial", desc: "DEPRECATED, no longer updated - Stable releases based on ubuntu xenial" }
 
 # container parameters
@@ -66,6 +71,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "15.06.20:", desc: "Deprecate." }
   - { date: "15.06.20:", desc: "Add fixes for 2.9.0." }
   - { date: "04.11.20:", desc: "`xenial` tag is deprecated and there will be no further releases for that tag." }
   - { date: "22.06.20:", desc: "Added Support for persistent Customization Folders." }

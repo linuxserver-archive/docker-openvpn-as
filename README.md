@@ -27,6 +27,12 @@ Find us at:
 * [GitHub](https://github.com/linuxserver) - view the source for all of our repositories.
 * [Open Collective](https://opencollective.com/linuxserver) - please consider helping us by either donating or contributing to our budget
 
+# DEPRECATION NOTICE
+
+This image is deprecated. We will not offer support for this image and it will not be updated.
+We recommend our wireguard image instead for vpn:
+https://github.com/linuxserver/docker-wireguard
+
 # [linuxserver/openvpn-as](https://github.com/linuxserver/docker-openvpn-as)
 
 [![GitHub Stars](https://img.shields.io/github/stars/linuxserver/docker-openvpn-as.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-openvpn-as)
@@ -61,7 +67,7 @@ This image provides various versions that are available via tags. `latest` tag u
 
 | Tag | Description |
 | :----: | --- |
-| latest | Stable releases based on ubuntu bionic |
+| latest | DEPRECATED, no longer updated - Stable releases based on ubuntu bionic |
 | xenial | DEPRECATED, no longer updated - Stable releases based on ubuntu xenial |
 
 ## Application Setup
@@ -252,6 +258,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **15.06.20:** - Deprecate.
 * **15.06.20:** - Add fixes for 2.9.0.
 * **04.11.20:** - `xenial` tag is deprecated and there will be no further releases for that tag.
 * **22.06.20:** - Added Support for persistent Customization Folders.
