@@ -318,7 +318,7 @@ pipeline {
                 cd ${TEMPDIR}/unraid/templates/
                 if ! grep -wq "${CONTAINER_NAME}" ${TEMPDIR}/unraid/templates/unraid/ignore.list; then
                   echo "${CONTAINER_NAME}" >> ${TEMPDIR}/unraid/templates/unraid/ignore.list
-                  git add unraid/templates/unraid/ignore.list
+                  git add unraid/ignore.list
                 fi
                 if grep -wq "${CONTAINER_NAME}" ${TEMPDIR}/unraid/templates/unraid/ignore.list; then
                   echo "Image is on the ignore list, removing Unraid template"
