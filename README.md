@@ -252,6 +252,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **15.06.20:** - Add fixes for 2.9.0.
 * **04.11.20:** - `xenial` tag is deprecated and there will be no further releases for that tag.
 * **22.06.20:** - Added Support for persistent Customization Folders.
 * **26.03.20:** - Switch to using the openvpn-as repo for packages.

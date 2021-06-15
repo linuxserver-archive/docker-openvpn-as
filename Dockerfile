@@ -15,21 +15,51 @@ RUN \
  apt-get update && \
  apt-get install -y \
 	bridge-utils \
+	file \
 	gnupg \
 	iproute2 \
 	iptables \
+	libatm1 \
+	libelf1 \
+	libexpat1 \
+	libip4tc0 \
+	libip6tc0 \
+	libiptc0 \
 	liblzo2-2 \
-	libmariadbclient18 \
-	libmysqlclient-dev \
+	libmagic-mgc \
+	libmagic1 \
+	libmariadb3 \
+	libmnl0 \
+	libmpdec2 \
+	libmysqlclient20 \
+	libnetfilter-conntrack3 \
+	libnfnetlink0 \
+	libpcap0.8 \
+	libpython3-stdlib \
+	libpython3.6-minimal \
+	libpython3.6-stdlib \
+	libxtables12 \
+	mime-support \
+	multiarch-support \
+	mysql-common \
 	net-tools \
-	python \
-	python-mysqldb \
-	python-pkg-resources \
-	python-pyrad \
-	python-serial \
-	rsync \
+	python3 \
+	python3-decorator \
+	python3-ldap3 \
+	python3-migrate \
+	python3-minimal \
+	python3-mysqldb \
+	python3-pbr \
+	python3-pkg-resources \
+	python3-pyasn1 \
+	python3-six \
+	python3-sqlalchemy \
+	python3-sqlparse \
+	python3-tempita \
+	python3.6 \
+	python3.6-minimal \
 	sqlite3 \
-	ucarp && \
+	xz-utils && \
  echo "**** add openvpn-as repo ****" && \
  curl -s https://as-repository.openvpn.net/as-repo-public.gpg | apt-key add - && \
  echo "deb http://as-repository.openvpn.net/as/debian bionic main">/etc/apt/sources.list.d/openvpn-as-repo.list && \
